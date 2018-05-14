@@ -3,18 +3,22 @@
 <head>
     <meta charset="utf-8">
     
-    <title>M-Palace</title>
+    <title>连续域蚁群算法MATLAB实现 | M-Palace</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Student of BUPT">
-<meta property="og:type" content="website">
-<meta property="og:title" content="M-Palace">
-<meta property="og:url" content="http://yoursite.com/index.html">
+    <meta name="description" content="算法介绍：蚁群算法（ACO）是一种模拟进化算法，它最初被用来在图中寻找最优路径，后来逐渐应用于求极值、组合优化等其他问题。在算法初期，蚂蚁无序地运动寻解，随着信息素的积累，蚂蚁越发趋向于接近最优解的一些解，直到算法停滞，收敛于最优解。">
+<meta name="keywords" content="MATLAB">
+<meta property="og:type" content="article">
+<meta property="og:title" content="连续域蚁群算法MATLAB实现">
+<meta property="og:url" content="http://yoursite.com/2018/05/15/连续域蚁群算法MATLAB实现/index.html">
 <meta property="og:site_name" content="M-Palace">
-<meta property="og:description" content="Student of BUPT">
+<meta property="og:description" content="算法介绍：蚁群算法（ACO）是一种模拟进化算法，它最初被用来在图中寻找最优路径，后来逐渐应用于求极值、组合优化等其他问题。在算法初期，蚂蚁无序地运动寻解，随着信息素的积累，蚂蚁越发趋向于接近最优解的一些解，直到算法停滞，收敛于最优解。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://p00h3nrjp.bkt.clouddn.com/untitled13.jpg">
+<meta property="og:updated_time" content="2018-05-14T18:21:58.775Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="M-Palace">
-<meta name="twitter:description" content="Student of BUPT">
+<meta name="twitter:title" content="连续域蚁群算法MATLAB实现">
+<meta name="twitter:description" content="算法介绍：蚁群算法（ACO）是一种模拟进化算法，它最初被用来在图中寻找最优路径，后来逐渐应用于求极值、组合优化等其他问题。在算法初期，蚂蚁无序地运动寻解，随着信息素的积累，蚂蚁越发趋向于接近最优解的一些解，直到算法停滞，收敛于最优解。">
+<meta name="twitter:image" content="http://p00h3nrjp.bkt.clouddn.com/untitled13.jpg">
     
 
     
@@ -214,16 +218,15 @@ ga('send', 'pageview');
 </aside>
 
             
-            <section id="main">
-    <article id="post-连续域蚁群算法MATLAB实现" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-连续域蚁群算法MATLAB实现" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
             <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/05/15/连续域蚁群算法MATLAB实现/">连续域蚁群算法MATLAB实现</a>
+        <h1 class="article-title" itemprop="name">
+            连续域蚁群算法MATLAB实现
         </h1>
     
 
@@ -252,10 +255,13 @@ ga('send', 'pageview');
         
         <div class="article-entry" itemprop="articleBody">
         
-            <p><h3 id="算法介绍："><a href="#算法介绍：" class="headerlink" title="算法介绍："></a>算法介绍：</h3><p>蚁群算法（ACO）是一种模拟进化算法，它最初被用来在图中寻找最优路径，后来逐渐应用于求极值、组合优化等其他问题。在算法初期，蚂蚁无序地运动寻解，随着信息素的积累，蚂蚁越发趋向于接近最优解的一些解，直到算法停滞，收敛于最优解。</p></p>
-            <p class="article-more-link">
-                <a href="/2018/05/15/连续域蚁群算法MATLAB实现/#more">查看更多</a>
-            </p>
+            
+            <h3 id="算法介绍："><a href="#算法介绍：" class="headerlink" title="算法介绍："></a>算法介绍：</h3><p>蚁群算法（ACO）是一种模拟进化算法，它最初被用来在图中寻找最优路径，后来逐渐应用于求极值、组合优化等其他问题。在算法初期，蚂蚁无序地运动寻解，随着信息素的积累，蚂蚁越发趋向于接近最优解的一些解，直到算法停滞，收敛于最优解。</p>
+<a id="more"></a>
+<p>以下是一个算法实例：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line">clear all</span><br><span class="line">clc</span><br><span class="line"><span class="comment">%%初始化%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span><br><span class="line">Ant=<span class="number">300</span>;  <span class="comment">%蚂蚁数量</span></span><br><span class="line">Times=<span class="number">80</span>;  <span class="comment">%蚂蚁移动次数</span></span><br><span class="line">Rou=<span class="number">0.9</span>;  <span class="comment">%信息素挥发系数</span></span><br><span class="line">P0=<span class="number">0.2</span>;  <span class="comment">%转移概率常数</span></span><br><span class="line">Lower_1=<span class="number">-1</span>;  <span class="comment">%设置搜索范围</span></span><br><span class="line">Upper_1=<span class="number">1</span>;</span><br><span class="line">Lower_2=<span class="number">-1</span>;</span><br><span class="line">Upper_2=<span class="number">1</span>;</span><br><span class="line">F = @(x1,x2) -(x1.^<span class="number">4</span>+<span class="number">3</span>*x2.^<span class="number">4</span><span class="number">-0.2</span>*<span class="built_in">cos</span>(<span class="number">3</span>*<span class="built_in">pi</span>*x1)<span class="number">-0.4</span>*<span class="built_in">cos</span>(<span class="number">4</span>*<span class="built_in">pi</span>*x2)+<span class="number">0.6</span>);</span><br><span class="line"><span class="comment">%%%%%%%%%%%%%%%%%%%%%%%%%%%</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:Ant</span><br><span class="line">    X(<span class="built_in">i</span>,<span class="number">1</span>)=(Lower_1+(Upper_1-Lower_1)*<span class="built_in">rand</span>);  <span class="comment">%随机设置蚂蚁的初值位置</span></span><br><span class="line">    X(<span class="built_in">i</span>,<span class="number">2</span>)=(Lower_2+(Upper_2-Lower_2)*<span class="built_in">rand</span>);</span><br><span class="line">    Tau(<span class="built_in">i</span>)=F(X(<span class="built_in">i</span>,<span class="number">1</span>),X(<span class="built_in">i</span>,<span class="number">2</span>));</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"> </span><br><span class="line">step=<span class="number">0.05</span>;</span><br><span class="line">f=<span class="string">'-(x.^4+3*y.^4-0.2*cos(3*pi*x)-0.4*cos(4*pi*y)+0.6)'</span>;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">[x,y]=<span class="built_in">meshgrid</span>(Lower_1:step:Upper_1,Lower_2:step:Upper_2);</span><br><span class="line">z=eval(f);</span><br><span class="line">figure(<span class="number">1</span>);</span><br><span class="line">subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>);</span><br><span class="line">mesh(x,y,z);</span><br><span class="line">hold on;</span><br><span class="line">plot3(X(:,<span class="number">1</span>),X(:,<span class="number">2</span>),Tau,<span class="string">'k*'</span>)</span><br><span class="line">hold on;</span><br><span class="line">text(<span class="number">0.1</span>,<span class="number">0.8</span>,<span class="number">-0.1</span>,<span class="string">'蚂蚁的初始分布位置'</span>);</span><br><span class="line">xlabel(<span class="string">'x'</span>);ylabel(<span class="string">'y'</span>);zlabel(<span class="string">'f(x,y)'</span>);</span><br><span class="line"> </span><br><span class="line"><span class="keyword">for</span> T=<span class="number">1</span>:Times</span><br><span class="line">    lamda=<span class="number">1</span>/T;</span><br><span class="line">    [Tau_Best(T),BestIndex]=max(Tau);</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:Ant</span><br><span class="line">        P(T,<span class="built_in">i</span>)=(Tau(BestIndex)-Tau(<span class="built_in">i</span>))/Tau(BestIndex);  <span class="comment">%计算状态转移概率</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:Ant</span><br><span class="line">        <span class="keyword">if</span> P(T,<span class="built_in">i</span>)&lt;P0  <span class="comment">%局部搜索</span></span><br><span class="line">            temp1=X(<span class="built_in">i</span>,<span class="number">1</span>)+(<span class="number">2</span>*<span class="built_in">rand</span><span class="number">-1</span>)*lamda;</span><br><span class="line">            temp2=X(<span class="built_in">i</span>,<span class="number">2</span>)+(<span class="number">2</span>*<span class="built_in">rand</span><span class="number">-1</span>)*lamda;</span><br><span class="line">        <span class="keyword">else</span>  <span class="comment">%全局搜索</span></span><br><span class="line">            temp1=X(<span class="built_in">i</span>,<span class="number">1</span>)+(Upper_1-Lower_1)*(<span class="built_in">rand</span><span class="number">-0.5</span>);</span><br><span class="line">            temp2=X(<span class="built_in">i</span>,<span class="number">2</span>)+(Upper_2-Lower_2)*(<span class="built_in">rand</span><span class="number">-0.5</span>);</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">%越界处理</span></span><br><span class="line">        <span class="keyword">if</span> temp1&lt;Lower_1</span><br><span class="line">            temp1=Lower_1;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">if</span> temp1&gt;Upper_1</span><br><span class="line">            temp1=Upper_1;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">if</span> temp2&lt;Lower_2</span><br><span class="line">            temp2=Lower_2;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">if</span> temp2&gt;Upper_2</span><br><span class="line">            temp2=Upper_2;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">%%%</span></span><br><span class="line">        <span class="keyword">if</span> F(temp1,temp2)&gt;F(X(<span class="built_in">i</span>,<span class="number">1</span>),X(<span class="built_in">i</span>,<span class="number">2</span>))  <span class="comment">%判断蚂蚁是否移动</span></span><br><span class="line">            X(<span class="built_in">i</span>,<span class="number">1</span>)=temp1;</span><br><span class="line">            X(<span class="built_in">i</span>,<span class="number">2</span>)=temp2;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:Ant</span><br><span class="line">        Tau(<span class="built_in">i</span>)=(<span class="number">1</span>-Rou)*Tau(<span class="built_in">i</span>)+F(X(<span class="built_in">i</span>,<span class="number">1</span>),X(<span class="built_in">i</span>,<span class="number">2</span>));  <span class="comment">%更新信息量</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">subplot(<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>);</span><br><span class="line">mesh(x,y,z);</span><br><span class="line">hold on;</span><br><span class="line">x=X(:,<span class="number">1</span>);</span><br><span class="line">y=X(:,<span class="number">2</span>);</span><br><span class="line">plot3(x,y,eval(f),<span class="string">'k*'</span>);</span><br><span class="line">hold on;</span><br><span class="line">text(<span class="number">0.1</span>,<span class="number">0.8</span>,<span class="number">-0.1</span>,<span class="string">'蚂蚁的最终分布位置'</span>);</span><br><span class="line">xlabel(<span class="string">'x'</span>);ylabel(<span class="string">'y'</span>);zlabel(<span class="string">'f(x,y)'</span>);</span><br><span class="line"> </span><br><span class="line">[max_value,max_index]=max(Tau);</span><br><span class="line">maxX=X(max_index,<span class="number">1</span>);</span><br><span class="line">maxY=X(max_index,<span class="number">2</span>);</span><br><span class="line">maxValue=F(X(max_index,<span class="number">1</span>),X(max_index,<span class="number">2</span>));</span><br></pre></td></tr></table></figure>
+<h3 id="输出结果："><a href="#输出结果：" class="headerlink" title="输出结果："></a>输出结果：</h3><p><img src="http://p00h3nrjp.bkt.clouddn.com/untitled13.jpg" alt="输出结果"></p>
+
         
         </div>
         <footer class="article-footer">
@@ -339,131 +345,30 @@ ga('send', 'pageview');
         </footer>
     </div>
     
-</article>
-
-
-
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
         
-        
-            <header class="article-header">
-                
+<nav id="article-nav">
     
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/05/14/hello-world/">Hello World</a>
-        </h1>
     
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/05/14/hello-world/">
-            <time datetime="2018-05-14T08:47:09.066Z" itemprop="datePublished">2018-05-14</time>
+        <a href="/2018/05/14/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">Hello World</div>
         </a>
-    </div>
-
-
-                        
-                        
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p></p>
-            <p class="article-more-link">
-                <a href="/2018/05/14/hello-world/#more">查看更多</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2018/05/14/hello-world/" data-id="cjh6ksw9l0001k4vj9nxg8bwy" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
     
-        <a href="http://yoursite.com/2018/05/14/hello-world/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/05/14/hello-world/">评论</a>
-    
+</nav>
 
-        </footer>
-    </div>
+
     
 </article>
 
+
+    
+    
+        <section id="comments">
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+</section>
+    
 
 </section>
             
@@ -582,11 +487,13 @@ ga('send', 'pageview');
     <script>
     var disqus_config = function () {
         
-        this.page.identifier = '';
+            this.page.url = 'http://yoursite.com/2018/05/15/连续域蚁群算法MATLAB实现/';
+        
+        this.page.identifier = '连续域蚁群算法MATLAB实现';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
-        s.src = '//' + 'luochang212-github-io' + '.disqus.com/count.js';
+        s.src = '//' + 'luochang212-github-io' + '.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
