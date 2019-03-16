@@ -14,7 +14,7 @@
 <meta property="og:description" content="算法介绍：灰色预测，就是对既包含已知信息又包含未知信息的灰色系统进行的预测。通过提取数字特征，建立相应的微分方程，生成有较强规律的数字序列。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://pityboy.oss-cn-beijing.aliyuncs.com/untitled211.jpg">
-<meta property="og:updated_time" content="2018-05-16T06:26:42.143Z">
+<meta property="og:updated_time" content="2019-03-16T09:16:09.068Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="灰色预测的MATLAB实现">
 <meta name="twitter:description" content="算法介绍：灰色预测，就是对既包含已知信息又包含未知信息的灰色系统进行的预测。通过提取数字特征，建立相应的微分方程，生成有较强规律的数字序列。">
@@ -172,11 +172,11 @@ ga('send', 'pageview');
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                4
+                5
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                1
+                2
                 <span>标签</span>
             </div>
         </div>
@@ -261,15 +261,8 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h3 id="算法介绍："><a href="#算法介绍：" class="headerlink" title="算法介绍："></a>算法介绍：</h3><p>灰色预测，就是对既包含已知信息又包含未知信息的<strong>灰色系统</strong>进行的预测。通过提取数字特征，建立相应的微分方程，生成有较强规律的数字序列。</p>
+            <h3 id="算法介绍："><a href="#算法介绍：" class="headerlink" title="算法介绍："></a>算法介绍：</h3><p>灰色预测，就是对既包含已知信息又包含未知信息的灰色系统进行的预测。通过提取数字特征，建立相应的微分方程，生成有较强规律的数字序列。</p>
 <a id="more"></a>
-<h3 id="灰色系统："><a href="#灰色系统：" class="headerlink" title="灰色系统："></a>灰色系统：</h3><blockquote>
-<p>灰色系统理论提出了一种新的分析方法—关联度分析方法，即根据因素之间发展 态势的相似或相异程度来衡量因素间关联的程度，它揭示了事物动态关联的特征与程 度。由于以发展态势为立足点，因此对样本量的多少没有过分的要求，也不需要典型的 分布规律，计算量少到甚至可用手算，且不致出现关联度的量化结果与定性分析不一致 的情况。这种方法已应用到农业经济、水利、宏观经济等各方面，都取得了较好的效果。</p>
-<p> 灰色系统理论建模的主要任务是根据具体灰色系统的行为特征数据，充分开发并 利用不多的数据中的显信息和隐信息，寻找因素间或因素本身的数学关系。通常的办法 是采用离散模型，建立一个按时间作逐段分析的模型。但是，离散模型只能对客观系统 的发展做短期分析，适应不了从现在起做较长远的分析、规划、决策的要求。尽管连续 系统的离散近似模型对许多工程应用来讲是有用的，但在某些研究领域中，人们却常常 希望使用微分方程模型。事实上，微分方程的系统描述了我们所希望辨识的系统内部的 物理或化学过程的本质。</p>
-<p> 灰色系统理论首先基于对客观系统的新的认识。尽管某些系统的信息不够充分， 但作为系统必然是有特定功能和有序的，只是其内在规律并未充分外露。有些随机量、 无规则的干扰成分以及杂乱无章的数据列，从灰色系统的观点看，并不认为是不可捉摸 的。相反地，灰色系统理论将随机量看作是在一定范围内变化的灰色量，按适当的办法 将原始数据进行处理，将灰色数变换为生成数，从生成数进而得到规律性较强的生成函 数。例如，某些系统的数据经处理后呈现出指数规律，这是由于大多数系统都是广义的 能量系统，而指数规律是能量变化的一种规律。灰色系统理论的量化基础是生成数，从 而突破了概率统计的局限性，使其结果不再是过去依据大量数据得到的经验性的统计规 律，而是现实性的生成律。这种使灰色系统变得尽量清晰明了的过程被称为白化。 </p>
-<p>目前，灰色系统理论已成功地应用于工程控制、经济管理、未来学研究、生态系 统及复杂多变的农业系统中，并取得了可喜的成就。灰色系统理论有可能对社会、经济 等抽象系统进行分析、建模、预测、决策和控制，它有可能成为人们认识客观系统改造 客观系统的一个新型的理论工具。</p>
-</blockquote>
-<p>详细阅读：<a href="http://p00h3nrjp.bkt.clouddn.com/%E7%AC%AC28%E7%AB%A0%20%20%E7%81%B0%E8%89%B2%E7%B3%BB%E7%BB%9F%E7%90%86%E8%AE%BA%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8.pdf" target="_blank" rel="noopener">PDF</a></p>
 <h3 id="算法思路："><a href="#算法思路：" class="headerlink" title="算法思路："></a>算法思路：</h3><ol>
 <li>级比检验</li>
 <li>GM建模</li>
@@ -277,7 +270,6 @@ ga('send', 'pageview');
 <li>求生成值数列及模型还原值</li>
 <li>精度检验：残差、级比偏差</li>
 </ol>
-<p>详细阅读：<a href="http://p00h3nrjp.bkt.clouddn.com/%E7%81%B0%E8%89%B2%E9%A2%84%E6%B5%8B%E6%80%9D%E8%B7%AF.pdf" target="_blank" rel="noopener">PDF</a></p>
 <h3 id="代码实例："><a href="#代码实例：" class="headerlink" title="代码实例："></a>代码实例：</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">time = input(<span class="string">'输入原始数据的天数:'</span>);</span><br><span class="line">temp = <span class="built_in">ones</span>(<span class="number">1</span>,time);</span><br><span class="line">t1 = cumsum(temp);</span><br><span class="line">A = <span class="built_in">zeros</span>(<span class="number">1</span>,time);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:time</span><br><span class="line">    A(<span class="built_in">i</span>) = input(<span class="string">'依次输入原始数据:'</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">day = input(<span class="string">'输入需要预测的天数:'</span>);</span><br><span class="line">cou = <span class="built_in">length</span>(t1);</span><br><span class="line">B=cumsum(A);</span><br><span class="line">n=<span class="built_in">length</span>(A);</span><br><span class="line">C = <span class="built_in">zeros</span>(<span class="number">1</span>,n<span class="number">-1</span>);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:(n<span class="number">-1</span>)</span><br><span class="line">    C(<span class="built_in">i</span>)=(B(<span class="built_in">i</span>)+B(<span class="built_in">i</span>+<span class="number">1</span>))/<span class="number">2</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">D=A;D(<span class="number">1</span>)=[];</span><br><span class="line">D=D';</span><br><span class="line">E=[-C;ones(<span class="number">1</span>,n<span class="number">-1</span>)];</span><br><span class="line">c=inv(E*E')*E*D;</span><br><span class="line">c=c';</span><br><span class="line">a=c(<span class="number">1</span>);b=c(<span class="number">2</span>);</span><br><span class="line">F= <span class="built_in">zeros</span>(<span class="number">1</span>,n+<span class="number">3</span>);</span><br><span class="line">F(<span class="number">1</span>)=A(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">2</span>:(n+<span class="number">3</span>)</span><br><span class="line">    F(<span class="built_in">i</span>)=(A(<span class="number">1</span>)-b/a)/<span class="built_in">exp</span>(a*(<span class="built_in">i</span><span class="number">-1</span>))+b/a;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">G = <span class="built_in">zeros</span>(<span class="number">1</span>,n+day);</span><br><span class="line">G(<span class="number">1</span>)=A(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">2</span>:(n+day)</span><br><span class="line">    G(<span class="built_in">i</span>)=F(<span class="built_in">i</span>)-F(<span class="built_in">i</span><span class="number">-1</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">save(<span class="string">'Results.txt'</span>,<span class="string">'G'</span>,<span class="string">'-ascii'</span>);</span><br><span class="line">AA = <span class="built_in">ones</span>(<span class="number">1</span>,day);</span><br><span class="line">AB = cumsum(AA)+t1(cou);</span><br><span class="line">t2=[t1 AB];</span><br><span class="line">plot(t1,A,<span class="string">'o-'</span>,t2,G,<span class="string">'*-'</span>)</span><br><span class="line">xlabel(<span class="string">'时间（day）'</span>)</span><br><span class="line">ylabel(<span class="string">'消耗量（kg）'</span>)</span><br><span class="line">legend(<span class="string">'原始值'</span>,<span class="string">'模型值'</span>)</span><br><span class="line">title(<span class="string">'灰色预测'</span>)</span><br><span class="line">epsilon=(A-G(<span class="number">1</span>:cou))./A;</span><br><span class="line">figure</span><br><span class="line">plot(t1,epsilon,<span class="string">'b-'</span>)</span><br><span class="line">xlabel(<span class="string">'时间（day）'</span>)</span><br><span class="line">ylabel(<span class="string">'消耗量（kg）'</span>)</span><br><span class="line">title(<span class="string">'残差'</span>)</span><br></pre></td></tr></table></figure>
 <h3 id="输入示例："><a href="#输入示例：" class="headerlink" title="输入示例："></a>输入示例：</h3><p>输入原始数据的天数:6<br>依次输入原始数据:9<br>依次输入原始数据:7<br>依次输入原始数据:6<br>依次输入原始数据:8<br>依次输入原始数据:5<br>依次输入原始数据:7<br>输入需要预测的天数:3</p>
 <h3 id="输出结果："><a href="#输出结果：" class="headerlink" title="输出结果："></a>输出结果：</h3><p><img src="https://pityboy.oss-cn-beijing.aliyuncs.com/untitled21.jpg" alt="灰色预测"></p>
@@ -292,7 +284,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/05/14/灰色预测的MATLAB实现/" data-id="cjrdjfjh80002i4vjazvvi4jm" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/05/14/灰色预测的MATLAB实现/" data-id="cjtbdr44j0002ugvj5227wvgw" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -414,6 +406,25 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2019/03/15/用Python解置换群小题目/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://pityboy.oss-cn-beijing.aliyuncs.com/untitled211.jpg)" alt="用Python解置换群小题目" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/computer-science/">computer science</a></p>
+                            <p class="item-title"><a href="/2019/03/15/用Python解置换群小题目/" class="title">用Python解置换群小题目</a></p>
+                            <p class="item-date"><time datetime="2019-03-15T22:45:10.000Z" itemprop="datePublished">2019-03-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2018/05/14/马科维茨均值方差模型的MATLAB实现/" class="thumbnail">
     
     
@@ -471,10 +482,10 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/05/14/hello-world/" class="thumbnail">
+                            <a href="/2018/05/14/自我介绍/" class="thumbnail">
     
     
-        <span style="background-image:url(https://pityboy.oss-cn-beijing.aliyuncs.com/Rozmaitosc1111111.png)" alt="Hello World" class="thumbnail-image"></span>
+        <span style="background-image:url(https://pityboy.oss-cn-beijing.aliyuncs.com/Rozmaitosc1111111.png)" alt="自我介绍" class="thumbnail-image"></span>
     
 </a>
 
@@ -482,7 +493,7 @@ ga('send', 'pageview');
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/05/14/hello-world/" class="title">Hello World</a></p>
+                            <p class="item-title"><a href="/2018/05/14/自我介绍/" class="title">自我介绍</a></p>
                             <p class="item-date"><time datetime="2018-05-14T08:47:09.066Z" itemprop="datePublished">2018-05-14</time></p>
                         </div>
                     </li>
@@ -496,7 +507,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/computer-science/">computer science</a><span class="category-list-count">3</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/computer-science/">computer science</a><span class="category-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -505,7 +516,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -514,7 +525,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MATLAB/">MATLAB</a><span class="tag-list-count">3</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MATLAB/">MATLAB</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pycharm/">Pycharm</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -523,7 +534,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/MATLAB/" style="font-size: 10px;">MATLAB</a>
+            <a href="/tags/MATLAB/" style="font-size: 20px;">MATLAB</a> <a href="/tags/Pycharm/" style="font-size: 10px;">Pycharm</a>
         </div>
     </div>
 
