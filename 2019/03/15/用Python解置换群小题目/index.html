@@ -14,7 +14,7 @@
 <meta property="og:description" content="室友问了我一道题目，把我难住了，想不出解法，于是写了个小程序暴力求解。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/2019/03/15/用Python解置换群小题目/img/微信图片_20190316100222.jpg">
-<meta property="og:updated_time" content="2019-03-16T11:09:45.591Z">
+<meta property="og:updated_time" content="2019-03-16T11:15:34.816Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用Python解置换群小题目">
 <meta name="twitter:description" content="室友问了我一道题目，把我难住了，想不出解法，于是写了个小程序暴力求解。">
@@ -264,7 +264,7 @@ ga('send', 'pageview');
             <p>室友问了我一道题目，把我难住了，想不出解法，于是写了个小程序暴力求解。</p>
 <a id="more"></a>
 <p>题目如下</p>
-<p><img src="img/20190316065412.jpg" alt="字小伤眼"></p>
+<p><img src="/img/20190316065412.jpg" alt="字小伤眼"></p>
 <p>A permutation is applied to the string SUPERBGOLDHAT. The same permutation is applied to the output from this operation. The second output is OGTHLEPDSUARB. What was the first output? (Note: as an example, the permutation(1 3 4) applied to WOLF gives FOWL. Write your answer in capital letters inside quotation marks, e.g. “BEARDPLUGHOST”.)</p>
 <p>它说的是，一个变换规则作用于字符串SUPERBGOLDHAT, 生成一个新字符串。再次将相同的变换规则作用于这个新字符串，得到一个经过两次变换的字符串OGTHLEPDSUARB. 求第一次变换后的字符串。</p>
 <p>首先简单说明一下什么是置换，学过近世代数的同学可以跳过这部分</p>
@@ -276,11 +276,11 @@ ga('send', 'pageview');
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># a is something like index</span></span><br><span class="line"><span class="comment"># b is the second output you want</span></span><br><span class="line"><span class="comment"># C (capital) is the first output we guess</span></span><br><span class="line">a = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>])</span><br><span class="line">a = a<span class="number">-1</span></span><br><span class="line">b = np.array([<span class="number">8</span>, <span class="number">7</span>, <span class="number">13</span>, <span class="number">11</span>, <span class="number">9</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">10</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">12</span>, <span class="number">5</span>, <span class="number">6</span>])</span><br><span class="line">b = b<span class="number">-1</span></span><br><span class="line">c = np.zeros([a.size])</span><br><span class="line"></span><br><span class="line"><span class="comment"># traverse all permutations of a</span></span><br><span class="line"><span class="keyword">for</span> C <span class="keyword">in</span> itertools.permutations(a, a.size):</span><br><span class="line">    print(C)</span><br><span class="line">    <span class="keyword">for</span> num <span class="keyword">in</span> C:</span><br><span class="line">        c[num] = C[C[num]] <span class="comment"># c (lower case) is the second output in this iteration</span></span><br><span class="line">    <span class="keyword">if</span> (b == c).all():</span><br><span class="line">        C = [x+<span class="number">1</span> <span class="keyword">for</span> x <span class="keyword">in</span> C]</span><br><span class="line">        print(<span class="string">'The answer is '</span>, C)</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
 <p>最精髓的部分是那句 $c[num] = C[C[num]], ​$ 之前为了实现相同的功能写了十几行代码，还是我看了CSDN那篇博文以后，才发现了这个规律。如果问题改成根据third output, 去猜first output也很简单。就是把$C[C[num]]​$ 加多一层就可以了， $c[num] = C[C[C[num]]]. ​$ 如果题目是不同的数字，就把b和a的长度改一下，so easy.</p>
 <p>这个程序大概跑了一天，最后跑出来了(巨汗)，给大家展示一下</p>
-<p><img src="img/20190316091702.png" alt="运行结果"> </p>
+<p><img src="/img/20190316091702.png" alt="运行结果"> </p>
 <p>输出为 $[6, 12, 9,10, 3, 8, 5, 4, 13, 11, 2, 7, 1]. ​$ </p>
 <p>它的含义是, 序列a $[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] $ 表示原始输入 SUPERBGOLDHAT 的对应的index，即1代表S，2代表U，以此类推。而输出序列$[6, 12, 9,10, 3, 8, 5, 4, 13, 11, 2, 7, 1], $ 代表first output的序列。按index翻译，答案即为 BALDPORETHUGS. </p>
 <p>最后附上人脑解法 ^ _ ^</p>
-<p><img src="img/微信图片_20190316100222.jpg" alt="PO上来就歪了"></p>
+<p><img src="/img/20190316094941.jpg" alt="PO上来就歪了"></p>
 
         
         </div>
@@ -291,7 +291,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://yoursite.com/2019/03/15/用Python解置换群小题目/" data-id="cjtbe69us0004g0vjrtfbcsxn" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2019/03/15/用Python解置换群小题目/" data-id="cjtbeavmk0004b4vjckuoyk0y" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
