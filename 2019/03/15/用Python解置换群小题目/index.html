@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang=zh>
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     
     <title>用Python解置换群小题目 | M-Palace</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="室友问了我一道题目，把我难住了，想不出解法，于是写了个小程序暴力求解。">
 <meta name="keywords" content="Pycharm">
 <meta property="og:type" content="article">
@@ -24,7 +24,7 @@
     
 
     
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico">
     
 
     <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
@@ -58,7 +58,7 @@ ga('send', 'pageview');
 
 
 </head>
-
+</html>
 <body>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
         <header id="header">
@@ -86,7 +86,7 @@ ga('send', 'pageview');
                 <nav id="sub-nav">
                     <div class="profile" id="profile-nav">
                         <a id="profile-anchor" href="javascript:;">
-                            <img class="avatar" src="/MyPhoto.jpg" />
+                            <img class="avatar" src="/MyPhoto.jpg">
                             <i class="fa fa-caret-down"></i>
                         </a>
                     </div>
@@ -95,14 +95,14 @@ ga('send', 'pageview');
             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索">
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="ins-search-input" placeholder="想要查找什么...">
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -148,7 +148,7 @@ ga('send', 'pageview');
                 <td>
                     
     <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索">
     </div>
 
                 </td>
@@ -164,7 +164,7 @@ ga('send', 'pageview');
 <aside id="profile" class="profile-fixed">
     <div class="inner profile-inner">
         <div class="base-info profile-block">
-            <img id="avatar" src="/MyPhoto.jpg" />
+            <img id="avatar" src="/MyPhoto.jpg">
             <h2 id="name">罗畅</h2>
             <h3 id="title">功深熔琢，气无烟火。</h3>
             <span id="location"><i class="fa fa-map-marker"></i>Beijing, China</span>
@@ -187,25 +187,25 @@ ga('send', 'pageview');
                     
                     
                     <td>
-                        <a href="https://github.com/luochang212" target="_blank" title="github" class=tooltip>
+                        <a href="https://github.com/luochang212" target="_blank" title="github" class="tooltip">
                             <i class="fa fa-github"></i>
                         </a>
                     </td>
                     
                     <td>
-                        <a href="https://twitter.com/MinosPalace" target="_blank" title="twitter" class=tooltip>
+                        <a href="https://twitter.com/MinosPalace" target="_blank" title="twitter" class="tooltip">
                             <i class="fa fa-twitter"></i>
                         </a>
                     </td>
                     
                     <td>
-                        <a href="https://www.instagram.com/nzsksssw/" target="_blank" title="instagram" class=tooltip>
+                        <a href="https://www.instagram.com/nzsksssw/" target="_blank" title="instagram" class="tooltip">
                             <i class="fa fa-instagram"></i>
                         </a>
                     </td>
                     
                     <td>
-                        <a href="https://www.youtube.com/channel/UCOwYZWGePPZXK527y4HAItQ" target="_blank" title="youtube" class=tooltip>
+                        <a href="https://www.youtube.com/channel/UCOwYZWGePPZXK527y4HAItQ" target="_blank" title="youtube" class="tooltip">
                             <i class="fa fa-youtube"></i>
                         </a>
                     </td>
@@ -270,7 +270,10 @@ ga('send', 'pageview');
 <p>它说的是，一个变换规则作用于字符串SUPERBGOLDHAT, 生成一个新字符串。再次将相同的变换规则作用于这个新字符串，得到一个经过两次变换的字符串OGTHLEPDSUARB. 求第一次变换后的字符串。</p>
 </blockquote>
 <p>首先简单说明一下什么是置换，学过近世代数的同学可以跳过这部分</p>
-<p>首先给定一个序列<br>$a ={1, 2, 3, 4, 5, 6} $<br>然后给定一个置换<br>$$\sigma =  \left{\begin{matrix}1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 \ 3 &amp; 5 &amp; 2 &amp; 6 &amp; 4 &amp; 1\end{matrix}\right} $$<br>那么，置换 $\sigma$ 的作用就是，把序列 $a $ 中的1变成3，2变成5，3变成2，4变成6 $\ldots$<br>以此类推<br>第一次: 3 5 2 6 4 1<br>第二次: 2 4 5 1 6 3<br>第三次: 5 6 4 3 1 2<br>上面表示置换的方法叫<strong>两行式</strong>，此外，我们还可以用<strong>轮换</strong>来表示一个置换<br>举个例子，如下是一个两行式表示的置换<br>$$\tau =  \left{\begin{matrix}1 &amp; 3 &amp; 4 \ 3 &amp; 4 &amp; 1 \end{matrix}\right} $$<br>它表示成是轮换是 $\tau = (1 3 4) $<br>以上的 $\tau $ 和 $\sigma $ 都属于 k-循环置换<br>如果一个变换将 i<sub>1</sub> $\rightarrow$ i<sub>2</sub>, i<sub>2</sub> $\rightarrow$ i<sub>3</sub>, $\ldots $ i<sub>k</sub> $\rightarrow $ i<sub>1</sub>, 而其他各元不变，那么该置换称为<strong>k-循环置换</strong>(k-cycle)，写作 ( i<sub>1</sub>,i<sub>2</sub>,i<sub>3</sub> $\ldots $ i<sub>k</sub> ).<br>除了k-循环置换之外，还有一种置换叫做非循环置换<br>一个k-循环置换, 总是可以表示为一个轮换<br>一个<strong>非循环置换</strong>，则总是可以表示成几个轮换的积<br>例如，非循环置换 $ \upsilon $ 就可以表示成<br>$$\upsilon =  \left{\begin{matrix}1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 \ 6 &amp; 4 &amp; 2 &amp; 3 &amp; 5 &amp; 1\end{matrix}\right} = (1 6)(2 4 3)(5) = (1 6)(2 4 3) ​$$<br>(以上参考自: <a href="https://blog.csdn.net/y990041769/article/details/45172095" target="_blank" rel="noopener">置换群题目汇总</a>,  <a href="http://idl.hbdlib.cn/book/00000000000000/pdfbook/o/o01/index0069.pdf" target="_blank" rel="noopener">《近世代数》杨子胥</a> ) </p>
+<p>首先给定一个序列<br>$a ={1, 2, 3, 4, 5, 6} $<br>然后给定一个置换</p>
+<script type="math/tex; mode=display">\sigma =  \left\{\begin{matrix}1 & 2 & 3 & 4 & 5 & 6 \\ 3 & 5 & 2 & 6 & 4 & 1\end{matrix}\right\}</script><p>那么，置换 $\sigma$ 的作用就是，把序列 $a $ 中的1变成3，2变成5，3变成2，4变成6 $\ldots$<br>以此类推<br>第一次: 3 5 2 6 4 1<br>第二次: 2 4 5 1 6 3<br>第三次: 5 6 4 3 1 2<br>上面表示置换的方法叫<strong>两行式</strong>，此外，我们还可以用<strong>轮换</strong>来表示一个置换<br>举个例子，如下是一个两行式表示的置换</p>
+<script type="math/tex; mode=display">\tau =  \left\{\begin{matrix}1 & 3 & 4 \\ 3 & 4 & 1 \end{matrix}\right\}</script><p>它表示成是轮换是 $\tau = (1 3 4) $<br>以上的 $\tau $ 和 $\sigma $ 都属于 k-循环置换<br>如果一个变换将 i<sub>1</sub> $\rightarrow$ i<sub>2</sub>, i<sub>2</sub> $\rightarrow$ i<sub>3</sub>, $\ldots $ i<sub>k</sub> $\rightarrow $ i<sub>1</sub>, 而其他各元不变，那么该置换称为<strong>k-循环置换</strong>(k-cycle)，写作 ( i<sub>1</sub>,i<sub>2</sub>,i<sub>3</sub> $\ldots $ i<sub>k</sub> ).<br>除了k-循环置换之外，还有一种置换叫做非循环置换<br>一个k-循环置换, 总是可以表示为一个轮换<br>一个<strong>非循环置换</strong>，则总是可以表示成几个轮换的积<br>例如，非循环置换 $ \upsilon $ 就可以表示成</p>
+<script type="math/tex; mode=display">\upsilon =  \left\{\begin{matrix}1 & 2 & 3 & 4 & 5 & 6 \\ 6 & 4 & 2 & 3 & 5 & 1\end{matrix}\right\} = (1 6)(2 4 3)(5) = (1 6)(2 4 3) ​</script><p>(以上参考自: <a href="https://blog.csdn.net/y990041769/article/details/45172095" target="_blank" rel="noopener">置换群题目汇总</a>,  <a href="http://idl.hbdlib.cn/book/00000000000000/pdfbook/o/o01/index0069.pdf" target="_blank" rel="noopener">《近世代数》杨子胥</a> ) </p>
 <p>放上代码</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># a is something like index</span></span><br><span class="line"><span class="comment"># b is the second output you want</span></span><br><span class="line"><span class="comment"># C (capital) is the first output we guess</span></span><br><span class="line">a = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>])</span><br><span class="line">a = a<span class="number">-1</span></span><br><span class="line">b = np.array([<span class="number">8</span>, <span class="number">7</span>, <span class="number">13</span>, <span class="number">11</span>, <span class="number">9</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">10</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">12</span>, <span class="number">5</span>, <span class="number">6</span>])</span><br><span class="line">b = b<span class="number">-1</span></span><br><span class="line">c = np.zeros([a.size])</span><br><span class="line"></span><br><span class="line"><span class="comment"># traverse all permutations of a</span></span><br><span class="line"><span class="keyword">for</span> C <span class="keyword">in</span> itertools.permutations(a, a.size):</span><br><span class="line">    print(C)</span><br><span class="line">    <span class="keyword">for</span> num <span class="keyword">in</span> C:</span><br><span class="line">		<span class="comment"># c (lower case) is the second output in this iteration</span></span><br><span class="line">        c[num] = C[C[num]] </span><br><span class="line">    <span class="keyword">if</span> (b == c).all():</span><br><span class="line">        C = [x+<span class="number">1</span> <span class="keyword">for</span> x <span class="keyword">in</span> C]</span><br><span class="line">        print(<span class="string">'The answer is '</span>, C)</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
 <p>最精髓的部分是那句 $c[num] = C[C[num]], ​$ 之前为了实现相同的功能写了十几行代码，还是我看了CSDN那篇博文以后，才发现了这个规律。如果问题改成根据third output, 去猜first output也很简单。就是把$C[C[num]]​$ 加多一层就可以了， $c[num] = C[C[C[num]]]. ​$ 如果题目是不同的数字，就把b和a的长度改一下，so easy.</p>
@@ -292,7 +295,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://yoursite.com/2019/03/15/用Python解置换群小题目/" data-id="cjtbfif1d0004asvjoiia9qdh" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2019/03/15/用Python解置换群小题目/" data-id="cjtbfyear00025kvjkqa1w654" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -400,7 +403,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
-            <ul id="recent-post" class="">
+            <ul id="recent-post" class>
                 
                     <li>
                         
@@ -608,6 +611,23 @@ ga('send', 'pageview');
 <!-- Custom Scripts -->
 <script src="/js/main.js"></script>
 
-    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src>
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 </body>
 </html>
