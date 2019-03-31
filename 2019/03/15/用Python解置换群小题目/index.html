@@ -3,22 +3,22 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     
-    <title>灰色预测的MATLAB实现 | M-Palace</title>
+    <title>用Python解置换群小题目 | M-Palace</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="算法介绍：灰色预测，就是对既包含已知信息又包含未知信息的灰色系统进行的预测。通过提取数字特征，建立相应的微分方程，生成有较强规律的数字序列。">
-<meta name="keywords" content="MATLAB">
+    <meta name="description" content="室友问了我一道题目，把我难住了，想不出解法，于是写了个小程序暴力求解。">
+<meta name="keywords" content="Pycharm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="灰色预测的MATLAB实现">
-<meta property="og:url" content="http://yoursite.com/2018/05/14/灰色预测的MATLAB实现/index.html">
+<meta property="og:title" content="用Python解置换群小题目">
+<meta property="og:url" content="http://yoursite.com/2019/03/15/用Python解置换群小题目/index.html">
 <meta property="og:site_name" content="M-Palace">
-<meta property="og:description" content="算法介绍：灰色预测，就是对既包含已知信息又包含未知信息的灰色系统进行的预测。通过提取数字特征，建立相应的微分方程，生成有较强规律的数字序列。">
+<meta property="og:description" content="室友问了我一道题目，把我难住了，想不出解法，于是写了个小程序暴力求解。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://pityboy.oss-cn-beijing.aliyuncs.com/untitled211.jpg">
-<meta property="og:updated_time" content="2019-03-16T09:16:09.068Z">
+<meta property="og:image" content="http://yoursite.com/img/20190316094941.jpg">
+<meta property="og:updated_time" content="2019-03-31T15:41:07.521Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="灰色预测的MATLAB实现">
-<meta name="twitter:description" content="算法介绍：灰色预测，就是对既包含已知信息又包含未知信息的灰色系统进行的预测。通过提取数字特征，建立相应的微分方程，生成有较强规律的数字序列。">
-<meta name="twitter:image" content="https://pityboy.oss-cn-beijing.aliyuncs.com/untitled211.jpg">
+<meta name="twitter:title" content="用Python解置换群小题目">
+<meta name="twitter:description" content="室友问了我一道题目，把我难住了，想不出解法，于是写了个小程序暴力求解。">
+<meta name="twitter:image" content="http://yoursite.com/img/20190316094941.jpg">
     
 
     
@@ -218,7 +218,7 @@ ga('send', 'pageview');
 </aside>
 
             
-            <section id="main"><article id="post-灰色预测的MATLAB实现" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-用Python解置换群小题目" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -226,7 +226,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-            灰色预测的MATLAB实现
+            用Python解置换群小题目
         </h1>
     
 
@@ -235,8 +235,8 @@ ga('send', 'pageview');
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/05/14/灰色预测的MATLAB实现/">
-            <time datetime="2018-05-14T18:31:11.000Z" itemprop="datePublished">2018-05-15</time>
+        <a href="/2019/03/15/用Python解置换群小题目/">
+            <time datetime="2019-03-15T22:45:10.000Z" itemprop="datePublished">2019-03-16</time>
         </a>
     </div>
 
@@ -250,7 +250,7 @@ ga('send', 'pageview');
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/MATLAB/">MATLAB</a>
+        <a class="tag-link" href="/tags/Pycharm/">Pycharm</a>
     </div>
 
                     </div>
@@ -261,19 +261,30 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h3 id="算法介绍："><a href="#算法介绍：" class="headerlink" title="算法介绍："></a>算法介绍：</h3><p>灰色预测，就是对既包含已知信息又包含未知信息的灰色系统进行的预测。通过提取数字特征，建立相应的微分方程，生成有较强规律的数字序列。</p>
+            <p>室友问了我一道题目，把我难住了，想不出解法，于是写了个小程序暴力求解。</p>
 <a id="more"></a>
-<h3 id="算法思路："><a href="#算法思路：" class="headerlink" title="算法思路："></a>算法思路：</h3><ol>
-<li>级比检验</li>
-<li>GM建模</li>
-<li>建立微分方程</li>
-<li>求生成值数列及模型还原值</li>
-<li>精度检验：残差、级比偏差</li>
-</ol>
-<h3 id="代码实例："><a href="#代码实例：" class="headerlink" title="代码实例："></a>代码实例：</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">time = input(<span class="string">'输入原始数据的天数:'</span>);</span><br><span class="line">temp = <span class="built_in">ones</span>(<span class="number">1</span>,time);</span><br><span class="line">t1 = cumsum(temp);</span><br><span class="line">A = <span class="built_in">zeros</span>(<span class="number">1</span>,time);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:time</span><br><span class="line">    A(<span class="built_in">i</span>) = input(<span class="string">'依次输入原始数据:'</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">day = input(<span class="string">'输入需要预测的天数:'</span>);</span><br><span class="line">cou = <span class="built_in">length</span>(t1);</span><br><span class="line">B=cumsum(A);</span><br><span class="line">n=<span class="built_in">length</span>(A);</span><br><span class="line">C = <span class="built_in">zeros</span>(<span class="number">1</span>,n<span class="number">-1</span>);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:(n<span class="number">-1</span>)</span><br><span class="line">    C(<span class="built_in">i</span>)=(B(<span class="built_in">i</span>)+B(<span class="built_in">i</span>+<span class="number">1</span>))/<span class="number">2</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">D=A;D(<span class="number">1</span>)=[];</span><br><span class="line">D=D';</span><br><span class="line">E=[-C;ones(<span class="number">1</span>,n<span class="number">-1</span>)];</span><br><span class="line">c=inv(E*E')*E*D;</span><br><span class="line">c=c';</span><br><span class="line">a=c(<span class="number">1</span>);b=c(<span class="number">2</span>);</span><br><span class="line">F= <span class="built_in">zeros</span>(<span class="number">1</span>,n+<span class="number">3</span>);</span><br><span class="line">F(<span class="number">1</span>)=A(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">2</span>:(n+<span class="number">3</span>)</span><br><span class="line">    F(<span class="built_in">i</span>)=(A(<span class="number">1</span>)-b/a)/<span class="built_in">exp</span>(a*(<span class="built_in">i</span><span class="number">-1</span>))+b/a;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">G = <span class="built_in">zeros</span>(<span class="number">1</span>,n+day);</span><br><span class="line">G(<span class="number">1</span>)=A(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">2</span>:(n+day)</span><br><span class="line">    G(<span class="built_in">i</span>)=F(<span class="built_in">i</span>)-F(<span class="built_in">i</span><span class="number">-1</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">save(<span class="string">'Results.txt'</span>,<span class="string">'G'</span>,<span class="string">'-ascii'</span>);</span><br><span class="line">AA = <span class="built_in">ones</span>(<span class="number">1</span>,day);</span><br><span class="line">AB = cumsum(AA)+t1(cou);</span><br><span class="line">t2=[t1 AB];</span><br><span class="line">plot(t1,A,<span class="string">'o-'</span>,t2,G,<span class="string">'*-'</span>)</span><br><span class="line">xlabel(<span class="string">'时间（day）'</span>)</span><br><span class="line">ylabel(<span class="string">'消耗量（kg）'</span>)</span><br><span class="line">legend(<span class="string">'原始值'</span>,<span class="string">'模型值'</span>)</span><br><span class="line">title(<span class="string">'灰色预测'</span>)</span><br><span class="line">epsilon=(A-G(<span class="number">1</span>:cou))./A;</span><br><span class="line">figure</span><br><span class="line">plot(t1,epsilon,<span class="string">'b-'</span>)</span><br><span class="line">xlabel(<span class="string">'时间（day）'</span>)</span><br><span class="line">ylabel(<span class="string">'消耗量（kg）'</span>)</span><br><span class="line">title(<span class="string">'残差'</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="输入示例："><a href="#输入示例：" class="headerlink" title="输入示例："></a>输入示例：</h3><p>输入原始数据的天数:6<br>依次输入原始数据:9<br>依次输入原始数据:7<br>依次输入原始数据:6<br>依次输入原始数据:8<br>依次输入原始数据:5<br>依次输入原始数据:7<br>输入需要预测的天数:3</p>
-<h3 id="输出结果："><a href="#输出结果：" class="headerlink" title="输出结果："></a>输出结果：</h3><p><img src="https://pityboy.oss-cn-beijing.aliyuncs.com/untitled21.jpg" alt="灰色预测"></p>
-<p><img src="https://pityboy.oss-cn-beijing.aliyuncs.com/untitled22.jpg" alt="残差"></p>
+<p>题目如下</p>
+<p><img src="/img/20190316065412.jpg" alt="字小伤眼"></p>
+<p>A permutation is applied to the string SUPERBGOLDHAT. The same permutation is applied to the output from this operation. The second output is OGTHLEPDSUARB. What was the first output? (Note: as an example, the permutation(1 3 4) applied to WOLF gives FOWL. Write your answer in capital letters inside quotation marks, e.g. “BEARDPLUGHOST”.)</p>
+<blockquote>
+<p>它说的是，一个变换规则作用于字符串SUPERBGOLDHAT, 生成一个新字符串。再次将相同的变换规则作用于这个新字符串，得到一个经过两次变换的字符串OGTHLEPDSUARB. 求第一次变换后的字符串。</p>
+</blockquote>
+<p>首先简单说明一下什么是置换，学过近世代数的同学可以跳过这部分</p>
+<p>首先给定一个序列<br>$a ={1, 2, 3, 4, 5, 6} $<br>然后给定一个置换</p>
+<script type="math/tex; mode=display">\sigma =  \left\{\begin{matrix}1 & 2 & 3 & 4 & 5 & 6 \\ 3 & 5 & 2 & 6 & 4 & 1\end{matrix}\right\}</script><p>那么，置换 $\sigma$ 的作用就是，把序列 $a $ 中的1变成3，2变成5，3变成2，4变成6 $\ldots$<br>以此类推<br>第一次: 3 5 2 6 4 1<br>第二次: 2 4 5 1 6 3<br>第三次: 5 6 4 3 1 2<br>上面表示置换的方法叫<strong>两行式</strong>，此外，我们还可以用<strong>轮换</strong>来表示一个置换<br>举个例子，如下是一个两行式表示的置换</p>
+<script type="math/tex; mode=display">\tau =  \left\{\begin{matrix}1 & 3 & 4 \\ 3 & 4 & 1 \end{matrix}\right\}</script><p>它表示成是轮换是 $\tau = (1 3 4) $<br>以上的 $\tau $ 和 $\sigma $ 都属于 k-循环置换<br>如果一个变换将 i<sub>1</sub> $\rightarrow$ i<sub>2</sub>, i<sub>2</sub> $\rightarrow$ i<sub>3</sub>, $\ldots $ i<sub>k</sub> $\rightarrow $ i<sub>1</sub>, 而其他各元不变，那么该置换称为<strong>k-循环置换</strong>(k-cycle)，写作 ( i<sub>1</sub>,i<sub>2</sub>,i<sub>3</sub> $\ldots $ i<sub>k</sub> ).<br>除了k-循环置换之外，还有一种置换叫做非循环置换<br>一个k-循环置换, 总是可以表示为一个轮换<br>一个<strong>非循环置换</strong>，则总是可以表示成几个轮换的积<br>例如，非循环置换 $ \upsilon $ 就可以表示成</p>
+<script type="math/tex; mode=display">\upsilon =  \left\{\begin{matrix}1 & 2 & 3 & 4 & 5 & 6 \\ 6 & 4 & 2 & 3 & 5 & 1\end{matrix}\right\} = (1 6)(2 4 3)(5) = (1 6)(2 4 3) ​</script><p>(以上参考自: <a href="https://blog.csdn.net/y990041769/article/details/45172095" target="_blank" rel="noopener">置换群题目汇总</a>,  <a href="http://idl.hbdlib.cn/book/00000000000000/pdfbook/o/o01/index0069.pdf" target="_blank" rel="noopener">《近世代数》杨子胥</a> ) </p>
+<p>放上代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># a is something like index</span></span><br><span class="line"><span class="comment"># b is the second output you want</span></span><br><span class="line"><span class="comment"># C (capital) is the first output we guess</span></span><br><span class="line">a = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>])</span><br><span class="line">a = a<span class="number">-1</span></span><br><span class="line">b = np.array([<span class="number">8</span>, <span class="number">7</span>, <span class="number">13</span>, <span class="number">11</span>, <span class="number">9</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">10</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">12</span>, <span class="number">5</span>, <span class="number">6</span>])</span><br><span class="line">b = b<span class="number">-1</span></span><br><span class="line">c = np.zeros([a.size])</span><br><span class="line"></span><br><span class="line"><span class="comment"># traverse all permutations of a</span></span><br><span class="line"><span class="keyword">for</span> C <span class="keyword">in</span> itertools.permutations(a, a.size):</span><br><span class="line">    print(C)</span><br><span class="line">    <span class="keyword">for</span> num <span class="keyword">in</span> C:</span><br><span class="line">		<span class="comment"># c (lower case) is the second output in this iteration</span></span><br><span class="line">        c[num] = C[C[num]] </span><br><span class="line">    <span class="keyword">if</span> (b == c).all():</span><br><span class="line">        C = [x+<span class="number">1</span> <span class="keyword">for</span> x <span class="keyword">in</span> C]</span><br><span class="line">        print(<span class="string">'The answer is '</span>, C)</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<p>最精髓的部分是那句 $c[num] = C[C[num]], ​$ 之前为了实现相同的功能写了十几行代码，还是我看了CSDN那篇博文以后，才发现了这个规律。如果问题改成根据third output, 去猜first output也很简单。就是把$C[C[num]]​$ 加多一层就可以了， $c[num] = C[C[C[num]]]. ​$ 如果题目是不同的数字，就把b和a的长度改一下，so easy.</p>
+<p>这个程序大概跑了一天，最后跑出来了(巨汗)，给大家展示一下</p>
+<p><img src="/img/20190316091702.png" alt="运行结果"> </p>
+<p>输出为 $[6, 12, 9,10, 3, 8, 5, 4, 13, 11, 2, 7, 1]. ​$ </p>
+<p>它的含义是, 序列a $[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] $ 表示原始输入 SUPERBGOLDHAT 的对应的index，即1代表S，2代表U，以此类推。而输出序列$[6, 12, 9,10, 3, 8, 5, 4, 13, 11, 2, 7, 1], $ 代表first output的序列。</p>
+<p>到这里就解出来了，按index逐字翻译，答案是 BALDPORETHUGS. </p>
+<p>Over！</p>
+<p>但计算机真的算得太慢了，补上我新学的人脑解法 ^ _ ^</p>
+<p><img src="/img/20190316094941.jpg" alt="不知道为什么PO上来就歪了"></p>
 
         
         </div>
@@ -284,7 +295,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/05/14/灰色预测的MATLAB实现/" data-id="cjtx3e3ad00020kvjlvn9vqft" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2019/03/15/用Python解置换群小题目/" data-id="cjtx3e3ag00040kvjtrhlk3fr" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -352,7 +363,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="http://yoursite.com/2018/05/14/灰色预测的MATLAB实现/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/05/14/灰色预测的MATLAB实现/">评论</a>
+        <a href="http://yoursite.com/2019/03/15/用Python解置换群小题目/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2019/03/15/用Python解置换群小题目/">评论</a>
     
 
         </footer>
@@ -361,19 +372,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2018/05/14/马科维茨均值方差模型的MATLAB实现/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    马科维茨均值方差模型的MATLAB实现
-                
-            </div>
-        </a>
     
-    
-        <a href="/2018/05/14/连续域蚁群算法MATLAB实现/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/05/14/马科维茨均值方差模型的MATLAB实现/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">连续域蚁群算法MATLAB实现</div>
+            <div class="article-nav-title">马科维茨均值方差模型的MATLAB实现</div>
         </a>
     
 </nav>
@@ -573,9 +575,9 @@ ga('send', 'pageview');
     <script>
     var disqus_config = function () {
         
-            this.page.url = 'http://yoursite.com/2018/05/14/灰色预测的MATLAB实现/';
+            this.page.url = 'http://yoursite.com/2019/03/15/用Python解置换群小题目/';
         
-        this.page.identifier = '灰色预测的MATLAB实现';
+        this.page.identifier = '用Python解置换群小题目';
     };
     (function() { 
         var d = document, s = d.createElement('script');  

@@ -3,22 +3,19 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     
-    <title>灰色预测的MATLAB实现 | M-Palace</title>
+    <title>归档: 2019/3 | M-Palace</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="算法介绍：灰色预测，就是对既包含已知信息又包含未知信息的灰色系统进行的预测。通过提取数字特征，建立相应的微分方程，生成有较强规律的数字序列。">
-<meta name="keywords" content="MATLAB">
-<meta property="og:type" content="article">
-<meta property="og:title" content="灰色预测的MATLAB实现">
-<meta property="og:url" content="http://yoursite.com/2018/05/14/灰色预测的MATLAB实现/index.html">
+    <meta name="description" content="Student of BUPT">
+<meta name="keywords" content="computer science">
+<meta property="og:type" content="website">
+<meta property="og:title" content="M-Palace">
+<meta property="og:url" content="http://yoursite.com/archives/2019/03/index.html">
 <meta property="og:site_name" content="M-Palace">
-<meta property="og:description" content="算法介绍：灰色预测，就是对既包含已知信息又包含未知信息的灰色系统进行的预测。通过提取数字特征，建立相应的微分方程，生成有较强规律的数字序列。">
+<meta property="og:description" content="Student of BUPT">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://pityboy.oss-cn-beijing.aliyuncs.com/untitled211.jpg">
-<meta property="og:updated_time" content="2019-03-16T09:16:09.068Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="灰色预测的MATLAB实现">
-<meta name="twitter:description" content="算法介绍：灰色预测，就是对既包含已知信息又包含未知信息的灰色系统进行的预测。通过提取数字特征，建立相应的微分方程，生成有较强规律的数字序列。">
-<meta name="twitter:image" content="https://pityboy.oss-cn-beijing.aliyuncs.com/untitled211.jpg">
+<meta name="twitter:title" content="M-Palace">
+<meta name="twitter:description" content="Student of BUPT">
     
 
     
@@ -218,180 +215,50 @@ ga('send', 'pageview');
 </aside>
 
             
-            <section id="main"><article id="post-灰色预测的MATLAB实现" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+            <section id="main"><div class="timeline timeline-wrap">
+    
+            <div class="timeline-row timeline-row-major">
+                <span class="node"><i class="fa fa-calendar"></i></span>
+                <h1 class="title">2019</h1>
+            </div>
         
-        
-            <header class="article-header">
+        <div class="timeline-row">
+            <span class="node"></span>
+            <div class="content">
                 
     
-        <h1 class="article-title" itemprop="name">
-            灰色预测的MATLAB实现
+        <h1 itemprop="name">
+            <a class="timeline-article-title" href="/2019/03/15/用Python解置换群小题目/">用Python解置换群小题目</a>
         </h1>
     
 
-                
-                    <div class="article-meta">
-                        
+                <div class="article-meta">
+                    
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/05/14/灰色预测的MATLAB实现/">
-            <time datetime="2018-05-14T18:31:11.000Z" itemprop="datePublished">2018-05-15</time>
+        <a href="/2019/03/15/用Python解置换群小题目/">
+            <time datetime="2019-03-15T22:45:10.000Z" itemprop="datePublished">2019-03-16</time>
         </a>
     </div>
 
 
-                        
+                    
     <div class="article-category">
     	<i class="fa fa-folder"></i>
         <a class="article-category-link" href="/categories/computer-science/">computer science</a>
     </div>
 
-                        
+                    
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/MATLAB/">MATLAB</a>
+        <a class="tag-link" href="/tags/Pycharm/">Pycharm</a>
     </div>
 
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h3 id="算法介绍："><a href="#算法介绍：" class="headerlink" title="算法介绍："></a>算法介绍：</h3><p>灰色预测，就是对既包含已知信息又包含未知信息的灰色系统进行的预测。通过提取数字特征，建立相应的微分方程，生成有较强规律的数字序列。</p>
-<a id="more"></a>
-<h3 id="算法思路："><a href="#算法思路：" class="headerlink" title="算法思路："></a>算法思路：</h3><ol>
-<li>级比检验</li>
-<li>GM建模</li>
-<li>建立微分方程</li>
-<li>求生成值数列及模型还原值</li>
-<li>精度检验：残差、级比偏差</li>
-</ol>
-<h3 id="代码实例："><a href="#代码实例：" class="headerlink" title="代码实例："></a>代码实例：</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">time = input(<span class="string">'输入原始数据的天数:'</span>);</span><br><span class="line">temp = <span class="built_in">ones</span>(<span class="number">1</span>,time);</span><br><span class="line">t1 = cumsum(temp);</span><br><span class="line">A = <span class="built_in">zeros</span>(<span class="number">1</span>,time);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:time</span><br><span class="line">    A(<span class="built_in">i</span>) = input(<span class="string">'依次输入原始数据:'</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">day = input(<span class="string">'输入需要预测的天数:'</span>);</span><br><span class="line">cou = <span class="built_in">length</span>(t1);</span><br><span class="line">B=cumsum(A);</span><br><span class="line">n=<span class="built_in">length</span>(A);</span><br><span class="line">C = <span class="built_in">zeros</span>(<span class="number">1</span>,n<span class="number">-1</span>);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">1</span>:(n<span class="number">-1</span>)</span><br><span class="line">    C(<span class="built_in">i</span>)=(B(<span class="built_in">i</span>)+B(<span class="built_in">i</span>+<span class="number">1</span>))/<span class="number">2</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">D=A;D(<span class="number">1</span>)=[];</span><br><span class="line">D=D';</span><br><span class="line">E=[-C;ones(<span class="number">1</span>,n<span class="number">-1</span>)];</span><br><span class="line">c=inv(E*E')*E*D;</span><br><span class="line">c=c';</span><br><span class="line">a=c(<span class="number">1</span>);b=c(<span class="number">2</span>);</span><br><span class="line">F= <span class="built_in">zeros</span>(<span class="number">1</span>,n+<span class="number">3</span>);</span><br><span class="line">F(<span class="number">1</span>)=A(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">2</span>:(n+<span class="number">3</span>)</span><br><span class="line">    F(<span class="built_in">i</span>)=(A(<span class="number">1</span>)-b/a)/<span class="built_in">exp</span>(a*(<span class="built_in">i</span><span class="number">-1</span>))+b/a;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">G = <span class="built_in">zeros</span>(<span class="number">1</span>,n+day);</span><br><span class="line">G(<span class="number">1</span>)=A(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span>=<span class="number">2</span>:(n+day)</span><br><span class="line">    G(<span class="built_in">i</span>)=F(<span class="built_in">i</span>)-F(<span class="built_in">i</span><span class="number">-1</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">save(<span class="string">'Results.txt'</span>,<span class="string">'G'</span>,<span class="string">'-ascii'</span>);</span><br><span class="line">AA = <span class="built_in">ones</span>(<span class="number">1</span>,day);</span><br><span class="line">AB = cumsum(AA)+t1(cou);</span><br><span class="line">t2=[t1 AB];</span><br><span class="line">plot(t1,A,<span class="string">'o-'</span>,t2,G,<span class="string">'*-'</span>)</span><br><span class="line">xlabel(<span class="string">'时间（day）'</span>)</span><br><span class="line">ylabel(<span class="string">'消耗量（kg）'</span>)</span><br><span class="line">legend(<span class="string">'原始值'</span>,<span class="string">'模型值'</span>)</span><br><span class="line">title(<span class="string">'灰色预测'</span>)</span><br><span class="line">epsilon=(A-G(<span class="number">1</span>:cou))./A;</span><br><span class="line">figure</span><br><span class="line">plot(t1,epsilon,<span class="string">'b-'</span>)</span><br><span class="line">xlabel(<span class="string">'时间（day）'</span>)</span><br><span class="line">ylabel(<span class="string">'消耗量（kg）'</span>)</span><br><span class="line">title(<span class="string">'残差'</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="输入示例："><a href="#输入示例：" class="headerlink" title="输入示例："></a>输入示例：</h3><p>输入原始数据的天数:6<br>依次输入原始数据:9<br>依次输入原始数据:7<br>依次输入原始数据:6<br>依次输入原始数据:8<br>依次输入原始数据:5<br>依次输入原始数据:7<br>输入需要预测的天数:3</p>
-<h3 id="输出结果："><a href="#输出结果：" class="headerlink" title="输出结果："></a>输出结果：</h3><p><img src="https://pityboy.oss-cn-beijing.aliyuncs.com/untitled21.jpg" alt="灰色预测"></p>
-<p><img src="https://pityboy.oss-cn-beijing.aliyuncs.com/untitled22.jpg" alt="残差"></p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://yoursite.com/2018/05/14/灰色预测的MATLAB实现/" data-id="cjtx3e3ad00020kvjlvn9vqft" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://yoursite.com/2018/05/14/灰色预测的MATLAB实现/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/05/14/灰色预测的MATLAB实现/">评论</a>
-    
-
-        </footer>
-    </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2018/05/14/马科维茨均值方差模型的MATLAB实现/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">上一篇</strong>
-            <div class="article-nav-title">
-                
-                    马科维茨均值方差模型的MATLAB实现
-                
+                </div>
             </div>
-        </a>
+        </div>
     
-    
-        <a href="/2018/05/14/连续域蚁群算法MATLAB实现/" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">连续域蚁群算法MATLAB实现</div>
-        </a>
-    
-</nav>
-
-
-    
-</article>
-
-
-    
-    
-        <section id="comments">
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-</section>
-    
-
+</div>
 </section>
             
                 
@@ -573,13 +440,11 @@ ga('send', 'pageview');
     <script>
     var disqus_config = function () {
         
-            this.page.url = 'http://yoursite.com/2018/05/14/灰色预测的MATLAB实现/';
-        
-        this.page.identifier = '灰色预测的MATLAB实现';
+        this.page.identifier = '';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
-        s.src = '//' + 'luochang212-github-io' + '.disqus.com/embed.js';
+        s.src = '//' + 'luochang212-github-io' + '.disqus.com/count.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
@@ -609,23 +474,6 @@ ga('send', 'pageview');
 <!-- Custom Scripts -->
 <script src="/js/main.js"></script>
 
-    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-      all[i].SourceElement().parentNode.className += ' has-jax';
-    }
-  });
-</script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
-</script>
-<!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
+    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>

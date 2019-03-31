@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    
+    <title>马科维茨均值方差模型的MATLAB实现 | M-Palace</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="算法介绍MATLAB金融工具箱通过一系列函数对金融分析提供支持。其中，Portfolio类很好地支持了马科维茨投资理论的均值方差分析方法。该代码的作者是南开大学的马文辉博士，原网站链接在文后。因马博士在原网站中仅提供视频，所以我手打了以下代码。">
+<meta name="keywords" content="MATLAB">
+<meta property="og:type" content="article">
+<meta property="og:title" content="马科维茨均值方差模型的MATLAB实现">
+<meta property="og:url" content="http://yoursite.com/2018/05/14/马科维茨均值方差模型的MATLAB实现/index.html">
+<meta property="og:site_name" content="M-Palace">
+<meta property="og:description" content="算法介绍MATLAB金融工具箱通过一系列函数对金融分析提供支持。其中，Portfolio类很好地支持了马科维茨投资理论的均值方差分析方法。该代码的作者是南开大学的马文辉博士，原网站链接在文后。因马博士在原网站中仅提供视频，所以我手打了以下代码。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://pityboy.oss-cn-beijing.aliyuncs.com/untitled881.jpg">
+<meta property="og:updated_time" content="2019-03-16T10:18:32.312Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="马科维茨均值方差模型的MATLAB实现">
+<meta name="twitter:description" content="算法介绍MATLAB金融工具箱通过一系列函数对金融分析提供支持。其中，Portfolio类很好地支持了马科维茨投资理论的均值方差分析方法。该代码的作者是南开大学的马文辉博士，原网站链接在文后。因马博士在原网站中仅提供视频，所以我手打了以下代码。">
+<meta name="twitter:image" content="https://pityboy.oss-cn-beijing.aliyuncs.com/untitled881.jpg">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-110240674-1', 'auto');
+ga('send', 'pageview');
+
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">M-Palace</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/MyPhoto.jpg">
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索">
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索">
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile" class="profile-fixed">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/MyPhoto.jpg">
+            <h2 id="name">罗畅</h2>
+            <h3 id="title">功深熔琢，气无烟火。</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Beijing, China</span>
+            <a id="follow" target="_blank" href="https://github.com/luochang212">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                5
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                2
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/luochang212" target="_blank" title="github" class="tooltip">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://twitter.com/MinosPalace" target="_blank" title="twitter" class="tooltip">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://www.instagram.com/nzsksssw/" target="_blank" title="instagram" class="tooltip">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://www.youtube.com/channel/UCOwYZWGePPZXK527y4HAItQ" target="_blank" title="youtube" class="tooltip">
+                            <i class="fa fa-youtube"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-马科维茨均值方差模型的MATLAB实现" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            马科维茨均值方差模型的MATLAB实现
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/05/14/马科维茨均值方差模型的MATLAB实现/">
+            <time datetime="2018-05-14T19:06:48.000Z" itemprop="datePublished">2018-05-15</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/computer-science/">computer science</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/MATLAB/">MATLAB</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h3 id="算法介绍"><a href="#算法介绍" class="headerlink" title="算法介绍"></a>算法介绍</h3><p>MATLAB金融工具箱通过一系列函数对金融分析提供支持。其中，Portfolio类很好地支持了马科维茨投资理论的均值方差分析方法。该代码的作者是南开大学的马文辉博士，原网站链接在文后。因马博士在原网站中仅提供视频，所以我手打了以下代码。</p>
+<a id="more"></a>
+<h3 id="马科维茨均值投资组合理论"><a href="#马科维茨均值投资组合理论" class="headerlink" title="马科维茨均值投资组合理论"></a>马科维茨均值投资组合理论</h3><p>1952年，马克维茨发表了名为<em>Portfolio selection</em>的论文，提出了均值-方差投资组合模型，被公认是“现代组合理论的开端”。</p>
+<p>所谓投资组合，就是通过配置各项资产的投资比例，来降低投资风险、增加盈利的手段。直觉上，我们常说，不要把鸡蛋放在一个篮子里。因为如果只投资一只股票，盈利和亏损将完全取决于这一只股票的行情走势，一旦股票亏损则满盘皆输。而通过购买多只股票，并合理配置各股票的投资比例，就能降低预期风险、提升预期收益。马科维茨投资组合理论，用股票收益率的均值刻画收益，用收益率的方差刻画风险，第一次给出了“不要把鸡蛋放在一个篮子”的理论实证。</p>
+<h3 id="模型介绍"><a href="#模型介绍" class="headerlink" title="模型介绍"></a>模型介绍</h3><ol>
+<li><p>无差异曲线</p>
+<p>无差异曲线衡量的是投资者的风险收益偏好程度，无差异曲线具有以下特征：(1)每个投资者都有无数条无差异曲线，位于上方的无差异曲线所代表的效用水平比下方的无差异曲线所代表的效用高；(2)每一条无差异曲线都是上升的，因为投资者是风险厌恶的，如果面临更高的风险需要支付更高的收益；(3)无差异曲线上升的速度是递增的，即该函数的二阶导大于零，是下凹的。这说明随着风险增加投资者的厌恶程度是上升的；(4)无差异曲线是不相交的，因为同一条无差异曲线上财富效用是相同的，两条无差异曲线相交会导出同风险下高收益和低收益具有相同财富效用这样的谬论，利用反证法可得原假设不成立，故不相交。</p>
+<p><img src="https://pityboy.oss-cn-beijing.aliyuncs.com/%E5%9B%BE%E7%89%871.png" alt="无差异曲线"></p>
+</li>
+<li><p>有效市场边界</p>
+<p>马科维茨有效市场边界是所有最佳投资组合的集合。有效前沿曲线上面的每一点都代表一个最佳投资组合。有效市场边界满足以下两个条件：(1) 对每一水平的风险，该组合提供最大的预期收益； (2) 对每一水平的预期收益，该组合能提供最小的风险。</p>
+</li>
+</ol>
+<p>   <img src="https://pityboy.oss-cn-beijing.aliyuncs.com/%E5%9B%BE%E7%89%873.png" alt="有效市场边界"></p>
+<ol>
+<li><p>最优投资组合</p>
+<p>有效市场边界由所选取的投资组合唯一确定，无差异曲线由所选取投资者唯一确定。无差异曲线中和有效市场边界相切的那一点P代表了最优投资组合。</p>
+<p><img src="https://pityboy.oss-cn-beijing.aliyuncs.com/%E5%9B%BE%E7%89%874.png" alt="最优投资组合"></p>
+</li>
+</ol>
+<h3 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a>代码如下</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%% 投资组合优化 作者：马文辉</span></span><br><span class="line"><span class="comment">%该示例展示了如何利用金融工具箱(Finacial Toolbox)提供的Portfolio工具进行投资组合优化。</span></span><br><span class="line"><span class="comment">%Portfolio工具基于马科维茨的均值-方差理论以及托宾的两基金分离理论</span></span><br><span class="line"><span class="comment">%构建投资组合优化问题，并获取最大化夏普曲线的投资组合。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%% 获取数据集</span></span><br><span class="line"><span class="comment">%本示例使用的数据集包含了沪深两市10只股票，包括：</span></span><br><span class="line"></span><br><span class="line">clear;</span><br><span class="line">clc;</span><br><span class="line"></span><br><span class="line">load rawData.mat</span><br><span class="line">load assetTable.mat</span><br><span class="line"><span class="comment">%load assetWeeklyData.mat</span></span><br><span class="line"><span class="comment">%load assetMonthData.mat</span></span><br><span class="line"><span class="comment">%load assetDailyData.mat</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%% 资产价格转化为资产收益率</span></span><br><span class="line">assetData = rawData;</span><br><span class="line"><span class="comment">%投资收益率</span></span><br><span class="line">assetRet = price2ret(assetData);</span><br><span class="line"><span class="comment">%风险资产列表</span></span><br><span class="line"><span class="comment">%assetList = assetTable.Properties.variableName(:,2:end);</span></span><br><span class="line"><span class="comment">%&#123;</span></span><br><span class="line"><span class="comment">B=char('A','B','C','D','E','F','G','H','I','J');</span></span><br><span class="line"><span class="comment">%assetList = cellstr(B);</span></span><br><span class="line"><span class="comment">char B = ['A','B','C','D','E','F','G','H','I','J'];</span></span><br><span class="line"><span class="comment">assetList = cellstr(B);</span></span><br><span class="line"><span class="comment">%&#125;</span></span><br><span class="line"><span class="comment">%% 创建Protfolio对象</span></span><br><span class="line"><span class="comment">%Portfolio遵从马科维茨投资组合理论，以及托宾的mutual fund theorem理论</span></span><br><span class="line"><span class="comment">%pmv = Portfolio('AssetList',assetList);</span></span><br><span class="line">pmv = Portfolio(<span class="string">'NumAssets'</span>,<span class="number">10</span>);</span><br><span class="line">pmv = setAssetList(pmv);</span><br><span class="line">assetList = pmv.NumAssets;</span><br><span class="line"><span class="comment">%% 设置风险资产的期望收益率和协方差矩阵</span></span><br><span class="line">pmv = pmv.estimateAssetMoments(assetRet);</span><br><span class="line"></span><br><span class="line">assetMean = pmv.AssetMean*<span class="number">365</span>;</span><br><span class="line">assetCovar = pmv.AssetCovar;</span><br><span class="line">assetRisk = <span class="built_in">sqrt</span>(<span class="built_in">diag</span>(assetCovar)*<span class="number">365</span>);</span><br><span class="line"></span><br><span class="line">pmv = pmv.setAssetMoments(assetMean,assetRisk);</span><br><span class="line"></span><br><span class="line"><span class="comment">%% 默认限制条件下（所有资产的比例之和为1）的投资组合优化</span></span><br><span class="line">pmv = pmv.setDefaultConstraints;</span><br><span class="line"><span class="comment">%有效边界曲线</span></span><br><span class="line">pwgt = pmv.estimateFrontier(<span class="number">100</span>);<span class="comment">%20 100</span></span><br><span class="line">[pRisk,pRet] = pmv.estimatePortMoments(pwgt);</span><br><span class="line"></span><br><span class="line"><span class="comment">%% 可视化各项资产的期望收益率和风险</span></span><br><span class="line">clf;</span><br><span class="line">ax = axes;</span><br><span class="line">scatter(assetRisk+<span class="number">0.005</span>,assetMean,assetList);</span><br><span class="line">xlabel(<span class="string">'standard deviation of return'</span>);</span><br><span class="line">ylabel(<span class="string">'mean of return'</span>);</span><br><span class="line">hold on;</span><br><span class="line"></span><br><span class="line"><span class="comment">%% 有效边界曲线及曲线上的点（投资组合）</span></span><br><span class="line">ef = plot(pRisk,pRet,<span class="string">'b'</span>,<span class="string">'LineWidth'</span>,<span class="number">2</span>);</span><br><span class="line">legend(ef,<span class="string">'Efficient Frotier'</span>);</span><br><span class="line">scatter(pRisk,pRet,<span class="number">20</span>,<span class="string">'b'</span>,<span class="string">'filled'</span>);</span><br><span class="line">hold on;</span><br><span class="line"></span><br><span class="line"><span class="comment">%% 有效投资组合中资产分配比例</span></span><br><span class="line">figure;</span><br><span class="line">area(pwgt')</span><br><span class="line">legend(pmv.AssetList);</span><br><span class="line"></span><br><span class="line"><span class="comment">%% 增加无风险投资</span></span><br><span class="line"><span class="comment">%优化问题可以看成是一个无风险资产和一个风险资产组合的优化问题。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%无风险资产收益率</span></span><br><span class="line">cashMean = <span class="number">0.015</span>;</span><br><span class="line">cashRisk = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">pmv.RiskFreeRate = cashMean;</span><br><span class="line"><span class="comment">%设置无风险资产的比例</span></span><br><span class="line">q = pmv.setBudget(<span class="number">0</span>,<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">%% 生成有限边界曲线（风险资产组合中的资产比例）</span></span><br><span class="line">qwgt = q.estimateFrontier(<span class="number">20</span>);</span><br><span class="line">[qRisk,qRet] = q.estimatePortMoments(qwgt);</span><br><span class="line"></span><br><span class="line"><span class="comment">%% 增加无风险资产后，生成投资组合的资本配置线（CAL）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%无风险资产</span></span><br><span class="line">scatter(ax,cashRisk,cashMean,<span class="number">70</span>,<span class="string">'r'</span>,<span class="string">'filled'</span>);</span><br><span class="line">text(cashRisk+<span class="number">0.008</span>,cashMean,<span class="string">'Cash'</span>);</span><br><span class="line">legend(ef,<span class="string">'Efficient Frotier'</span>);</span><br><span class="line">hold on;</span><br><span class="line"></span><br><span class="line"><span class="comment">%% 根据夏普比率，获取有效边界上的最优投资组合</span></span><br><span class="line"><span class="comment">%夏普比率投资组合的收益与风险的衡量中起着重要作用。</span></span><br><span class="line"><span class="comment">%Sharo_Ratio = [E(Rp)-Rf]/σp;</span></span><br><span class="line"><span class="comment">%E(Rp):投资组合预期报酬率</span></span><br><span class="line"><span class="comment">%Rf:无风险利率</span></span><br><span class="line"><span class="comment">%σp:投资组合的标准差</span></span><br><span class="line"><span class="comment">%夏普比率表明了投资组合每承受一单位风险，会产生多少收益。</span></span><br><span class="line"><span class="comment">%根据Tobin的mutual fund theorem,最大夏普比率对应的组合是资本配置线与有效边界曲线的切点</span></span><br><span class="line">srwgt = pmv.estimateMaxSharpeRatio;</span><br><span class="line">[srRisk,srRet] = pmv.estimatePortMoments(srwgt);</span><br><span class="line"></span><br><span class="line">scatter(ax,srRisk,srRet,<span class="number">100</span>,<span class="string">'r'</span>,<span class="string">'filled'</span>);</span><br><span class="line">text(srRisk+<span class="number">0.001</span>,srRet,<span class="string">'Sharp Ratio'</span>);</span><br><span class="line">legend(ef,<span class="string">'Efficient Frotier'</span>);</span><br><span class="line">hold on;</span><br><span class="line"></span><br><span class="line"><span class="comment">%% 资本配置线</span></span><br><span class="line">cal = plot(ax,[cashRisk srRisk],[cashMean srRet],<span class="string">'r'</span>,<span class="string">'LineWidth'</span>,<span class="number">2</span>);</span><br><span class="line">legend([ef cal],<span class="string">'Efficient Frontier'</span>,<span class="string">'CAL'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">%ref = plot(qRisk,qRet,'r','LineWidth',3);</span></span><br><span class="line"><span class="comment">%legend([ef cal],'Efficient Frotier',CAL);</span></span><br><span class="line"><span class="comment">%hold on;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%% 有效边界曲线</span></span><br><span class="line">clf;</span><br><span class="line">scatter(assetRisk,assetMean,<span class="number">20</span>,<span class="string">'g'</span>,<span class="string">'filled'</span>);</span><br><span class="line">text(assetRisk+<span class="number">0.05</span>,assetMean,assetList);</span><br><span class="line">xlabel(<span class="string">'standard deviation of return'</span>);</span><br><span class="line">ylabel(<span class="string">'mean of return'</span>);</span><br><span class="line">hold on;</span><br><span class="line"></span><br><span class="line">plot(pRisk,pRet,<span class="string">'k'</span>,<span class="string">'LineWidth'</span>,<span class="number">1</span>);</span><br><span class="line">hold on;</span><br><span class="line"></span><br><span class="line">efr = plot(qRisk,qRet,<span class="string">'b'</span>,<span class="string">'LineWidth'</span>,<span class="number">2</span>);</span><br><span class="line">scatter(qRisk,qRet,<span class="number">20</span>,<span class="string">'b'</span>,<span class="string">'filled'</span>);</span><br><span class="line">legend(efr,<span class="string">'Efficient Frotier'</span>);</span><br><span class="line">hold on;</span><br><span class="line"></span><br><span class="line"><span class="comment">%% 投资组合中无风险资产和风险资产组合的占比</span></span><br><span class="line">riskPort = sum(qwgt);</span><br><span class="line">riskFree = <span class="number">1</span>-sum(qwgt);</span><br><span class="line">qwgtTotal = [riskPort;riskFree];</span><br><span class="line"></span><br><span class="line">figure;</span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">1</span>,<span class="number">1</span>);</span><br><span class="line">area(qwgtTotal');</span><br><span class="line">legend(<span class="string">'riskPort'</span>,<span class="string">'riskFree'</span>);</span><br><span class="line">xlabel(<span class="string">'Portfolio'</span>);</span><br><span class="line">ylabel(<span class="string">'Weights'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">%% 投资组合中的风险资产组合中的投资比例</span></span><br><span class="line">subplot(<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>);</span><br><span class="line">area(qwgt');</span><br><span class="line">legend(pmv.AssetList);</span><br><span class="line">xlabel(<span class="string">'Portfolio'</span>);</span><br><span class="line">ylabel(<span class="string">'Weights'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">%% 根据目标收益率和风险构建投资组合（风险资产组合）</span></span><br><span class="line"><span class="comment">%获取有效边界曲线的收益率和风险区间</span></span><br><span class="line">prwft = pmv.estimatePortMoments(prwgt);</span><br><span class="line"><span class="built_in">disp</span>(<span class="string">'risk range:'</span>);</span><br><span class="line"><span class="built_in">disp</span>(prRisk);</span><br><span class="line"><span class="built_in">disp</span>(<span class="string">'return range:'</span>);</span><br><span class="line"><span class="built_in">disp</span>(prRet);</span><br><span class="line"></span><br><span class="line"><span class="comment">%% 设定目标收益率和风险</span></span><br><span class="line">TargetRet = <span class="number">0.15</span>;     <span class="comment">%目标收益率</span></span><br><span class="line">TargetRisk = <span class="number">0.25</span>;    <span class="comment">%目标风险</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%获取投资组合，目标收益率</span></span><br><span class="line">tRetwgt = pmv.estimateFrontierByReturn(TargetRet);</span><br><span class="line">[tRetRsk,tRetRet] = pmv.estimatePortMoments(tRetwgt);</span><br><span class="line"></span><br><span class="line"><span class="comment">%获取投资组合，目标风险</span></span><br><span class="line">tRskwgt = pmv.estimateFrontierByRisk(TargetRisk);</span><br><span class="line">[tRskRsk,tRskRet] = pmv.estimatePortMoments(tRskwgt);</span><br><span class="line"></span><br><span class="line"><span class="comment">%基于目标收益率或风险的投资组合可视化</span></span><br><span class="line">figure;</span><br><span class="line">etf = plot(pRisk,pRet,<span class="string">'b'</span>,<span class="string">'LineWidth'</span>,<span class="number">2</span>);</span><br><span class="line">hold on;</span><br><span class="line">scatter(pRisk,pRet,<span class="number">20</span>,<span class="string">'b'</span>,<span class="string">'filled'</span>);</span><br><span class="line">hold on;</span><br><span class="line"></span><br><span class="line">scatter(tRetRsk,tRetRet,<span class="number">80</span>,<span class="string">'r'</span>,<span class="string">'filled'</span>);</span><br><span class="line">text(tRetRsk+<span class="number">0.005</span>,tRetRet,&#123;sprintf(<span class="string">'%g%% Return'</span>,<span class="number">100</span>*TargetRet)&#125;);</span><br><span class="line">hold on;</span><br><span class="line"></span><br><span class="line">scatter(tRskRsk,tRskRet,<span class="number">80</span>,<span class="string">'k'</span>,<span class="string">'filled'</span>);</span><br><span class="line">text(tRskRsk+<span class="number">0.008</span>,tRskRet,&#123;sprintf(<span class="string">'%g%% Risk'</span>,<span class="number">100</span>*TargetRisk)&#125;);</span><br><span class="line">legend(etf,<span class="string">'Efficient Frotier'</span>);</span><br><span class="line">hold on;</span><br></pre></td></tr></table></figure>
+<p>参考自：<a href="https://www.mathworks.com/videos/use-matlab-for-portfolio-optimization-1496201559558.html" target="_blank" rel="noopener">portfolio-optimization</a> </p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2018/05/14/马科维茨均值方差模型的MATLAB实现/" data-id="cjtx3e3co000i0kvj3taxby62" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2018/05/14/马科维茨均值方差模型的MATLAB实现/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2018/05/14/马科维茨均值方差模型的MATLAB实现/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/03/15/用Python解置换群小题目/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    用Python解置换群小题目
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2018/05/14/灰色预测的MATLAB实现/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">灰色预测的MATLAB实现</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/03/15/用Python解置换群小题目/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/img/20190316094941.jpg)" alt="用Python解置换群小题目" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/computer-science/">computer science</a></p>
+                            <p class="item-title"><a href="/2019/03/15/用Python解置换群小题目/" class="title">用Python解置换群小题目</a></p>
+                            <p class="item-date"><time datetime="2019-03-15T22:45:10.000Z" itemprop="datePublished">2019-03-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/05/14/马科维茨均值方差模型的MATLAB实现/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://pityboy.oss-cn-beijing.aliyuncs.com/untitled881.jpg)" alt="马科维茨均值方差模型的MATLAB实现" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/computer-science/">computer science</a></p>
+                            <p class="item-title"><a href="/2018/05/14/马科维茨均值方差模型的MATLAB实现/" class="title">马科维茨均值方差模型的MATLAB实现</a></p>
+                            <p class="item-date"><time datetime="2018-05-14T19:06:48.000Z" itemprop="datePublished">2018-05-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/05/14/灰色预测的MATLAB实现/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://pityboy.oss-cn-beijing.aliyuncs.com/untitled211.jpg)" alt="灰色预测的MATLAB实现" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/computer-science/">computer science</a></p>
+                            <p class="item-title"><a href="/2018/05/14/灰色预测的MATLAB实现/" class="title">灰色预测的MATLAB实现</a></p>
+                            <p class="item-date"><time datetime="2018-05-14T18:31:11.000Z" itemprop="datePublished">2018-05-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/05/14/连续域蚁群算法MATLAB实现/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://pityboy.oss-cn-beijing.aliyuncs.com/untitled132.jpg)" alt="连续域蚁群算法MATLAB实现" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/computer-science/">computer science</a></p>
+                            <p class="item-title"><a href="/2018/05/14/连续域蚁群算法MATLAB实现/" class="title">连续域蚁群算法MATLAB实现</a></p>
+                            <p class="item-date"><time datetime="2018-05-14T18:04:15.000Z" itemprop="datePublished">2018-05-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/05/14/一个自我介绍/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://pityboy.oss-cn-beijing.aliyuncs.com/Rozmaitosc1111111.png)" alt="一个自我介绍" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/05/14/一个自我介绍/" class="title">一个自我介绍</a></p>
+                            <p class="item-date"><time datetime="2018-05-14T08:47:09.066Z" itemprop="datePublished">2018-05-14</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/computer-science/">computer science</a><span class="category-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">4</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MATLAB/">MATLAB</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pycharm/">Pycharm</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/MATLAB/" style="font-size: 20px;">MATLAB</a> <a href="/tags/Pycharm/" style="font-size: 10px;">Pycharm</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://bt.byr.cn/login.php">byrbt</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 Chang Luo<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_config = function () {
+        
+            this.page.url = 'http://yoursite.com/2018/05/14/马科维茨均值方差模型的MATLAB实现/';
+        
+        this.page.identifier = '马科维茨均值方差模型的MATLAB实现';
+    };
+    (function() { 
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'luochang212-github-io' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+</body>
+</html>
