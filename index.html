@@ -224,7 +224,7 @@ ga('send', 'pageview');
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/2019/04/09/用Jupyter-notebook规划旅行路线/">用Jupyter notebook规划旅行路线</a>
+            <a class="article-title" href="/2019/04/09/用Jupyter-notebook规划旅行路线/">用Juputer notebook规划旅行路线</a>
         </h1>
     
 
@@ -240,7 +240,17 @@ ga('send', 'pageview');
 
 
                         
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/computer-science/">computer science</a>
+    </div>
+
                         
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/PyCharm/">PyCharm</a>
+    </div>
+
                     </div>
                 
             </header>
@@ -248,11 +258,26 @@ ga('send', 'pageview');
         
         <div class="article-entry" itemprop="articleBody">
         
-            <p></p><p>室友问我一道置换群题目，把我难住了。</p>
-<p>想不出解法，遂写了个程序暴力求解。</p><p></p>
-            <p class="article-more-link">
-                <a href="/2019/04/09/用Jupyter-notebook规划旅行路线/#more">查看更多</a>
-            </p>
+            
+            <p>详见GitHub项目：<a href="https://github.com/luochang212/TSP-Travel-Route" target="_blank" rel="noopener">https://github.com/luochang212/TSP-Travel-Route</a></p>
+<p>对于在欧洲的小伙伴们，复活节假在这一周就正式开始啦。大家打算怎么计划自己的旅行呢？</p>
+<p>身为一个拖延患者，我通常会在到达目的地前的一个晚上，花上半小时，在网上搜索当地感兴趣的景点 (POI). 然后在Google Maps上为它们点上小星星，以免和它们在路上插肩而过。</p>
+<!-- Salvation lies within -->
+<p>但每次搜完资料，我的谷歌地图上都攒满了密密麻麻的小星星。此时此刻，望着这些密集的星星，我的偷懒本能终于发动了！我不禁发出灵魂之问：如何才能走最少的路，就周游所有景点呢? </p>
+<p>这就涉及到一个早就被数学系小伙伴们玩腻的问题啦！辣就是旅行商问题，又名TSP问题。旅行商问题的描述是这样的：一个商人在各个城市之间旅行，要求遍历所有城市并返回到出发点，那么如何规划路线，才能使总路径最短。这里就不过多解释了，更多信息见<a href="https://zh.wikipedia.org/wiki/%E6%97%85%E8%A1%8C%E6%8E%A8%E9%94%80%E5%91%98%E9%97%AE%E9%A2%98" target="_blank" rel="noopener">维基百科</a></p>
+<p><img src="/img/googlemap.JPG" alt="即使是大名鼎鼎的谷歌地图，多地规划功能也之是按输入顺序，把相邻两个地点的最短路径连起来而已"></p>
+<p>本项目用googlemaps包获取纬度和经度信息，用OR-Tools包求解TSP问题，最后用gmaps可视化结果。总结：Google Maps的API真的太好用了吧，根本就不需要自己写多少东西orz</p>
+<p>项目地址在本页上方，现在就打开链接体验一下定制路线的酣畅淋漓吧 XD</p>
+<p>当然在体验之前，你需要有以下配置：</p>
+<ol>
+<li>你需要一个Jupyter notebook, 当然很多人会直接安装Anaconda3.</li>
+<li>你还需要安装这些包：googleplaces, googlemaps, gmaps, ortools.</li>
+<li>你需要一个Google Maps API，注册链接:  <a href="https://developers.google.com/maps/documentation/distance-matrix/start#get-a-key" target="_blank" rel="noopener">https://developers.google.com/maps/documentation/distance-matrix/start#get-a-key</a></li>
+<li>在Jupyter notebook打开本仓库唯一一个<del>有排面的</del>ipynb文件，将第一个代码块的所有变量，改成自己的。自己的目的地，目的地所属区域，自己的密码什么的……</li>
+<li>从头到尾运行所有代码块，你就得到你的旅行地图辣</li>
+</ol>
+<p> <center> 欢迎Star, Pull, Pr.&lt;/center &gt;</center></p>
+
         
         </div>
         <footer class="article-footer">
@@ -262,7 +287,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://yoursite.com/2019/04/09/用Jupyter-notebook规划旅行路线/" data-id="cjuap9nk00001fgvj6mutdhj9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2019/04/09/用Jupyter-notebook规划旅行路线/" data-id="cjuasb0k40002vsvjdotjijzz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -372,7 +397,7 @@ ga('send', 'pageview');
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Pycharm/">Pycharm</a>
+        <a class="tag-link" href="/tags/PyCharm/">PyCharm</a>
     </div>
 
                     </div>
@@ -396,7 +421,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://yoursite.com/2019/03/15/用Python解置换群小题目/" data-id="cjuap9nkr0004fgvj72w7wv0e" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2019/03/15/用Python解置换群小题目/" data-id="cjuasb0k70004vsvjr8meniq6" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -529,7 +554,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/05/14/马科维茨均值方差模型的MATLAB实现/" data-id="cjuap9nzi000ifgvj392k8ipk" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/05/14/马科维茨均值方差模型的MATLAB实现/" data-id="cjuasb151000nvsvjeat6wkqt" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -662,7 +687,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/05/14/灰色预测的MATLAB实现/" data-id="cjuap9nhk0000fgvja0it0b0d" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/05/14/灰色预测的MATLAB实现/" data-id="cjuasb0kc0008vsvjrirgkzf0" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -795,7 +820,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/05/14/连续域蚁群算法MATLAB实现/" data-id="cjuap9nr5000cfgvj6lzjqfz4" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/05/14/连续域蚁群算法MATLAB实现/" data-id="cjuasb0kd0009vsvjyv4cu7je" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -918,7 +943,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/05/14/一个自我介绍/" data-id="cjuap9nl10005fgvjpo87wyrl" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/05/14/一个自我介绍/" data-id="cjuasb0jy0000vsvjll4jdhli" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1012,15 +1037,15 @@ ga('send', 'pageview');
                             <a href="/2019/04/09/用Jupyter-notebook规划旅行路线/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/img/googlemap.JPG)" alt="用Juputer notebook规划旅行路线" class="thumbnail-image"></span>
     
 </a>
 
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2019/04/09/用Jupyter-notebook规划旅行路线/" class="title">用Jupyter notebook规划旅行路线</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/computer-science/">computer science</a></p>
+                            <p class="item-title"><a href="/2019/04/09/用Jupyter-notebook规划旅行路线/" class="title">用Juputer notebook规划旅行路线</a></p>
                             <p class="item-date"><time datetime="2019-04-09T21:13:00.000Z" itemprop="datePublished">2019-04-10</time></p>
                         </div>
                     </li>
@@ -1110,7 +1135,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/computer-science/">computer science</a><span class="category-list-count">4</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/computer-science/">computer science</a><span class="category-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -1128,7 +1153,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MATLAB/">MATLAB</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pycharm/">Pycharm</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MATLAB/">MATLAB</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PyCharm/">PyCharm</a><span class="tag-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -1137,7 +1162,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/MATLAB/" style="font-size: 20px;">MATLAB</a> <a href="/tags/Pycharm/" style="font-size: 10px;">Pycharm</a>
+            <a href="/tags/MATLAB/" style="font-size: 20px;">MATLAB</a> <a href="/tags/PyCharm/" style="font-size: 10px;">PyCharm</a>
         </div>
     </div>
 

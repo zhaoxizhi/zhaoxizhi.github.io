@@ -3,23 +3,22 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     
-    <title>用Jupyter notebook规划旅行路线 | M-Palace</title>
+    <title>用Juputer notebook规划旅行路线 | M-Palace</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="室友问我一道置换群题目，把我难住了。 想不出解法，遂写了个程序暴力求解。">
-<meta name="keywords" content="computer science">
+    <meta name="description" content="详见GitHub项目：https://github.com/luochang212/TSP-Travel-Route 对于在欧洲的小伙伴们，复活节假在这一周就正式开始啦。大家打算怎么计划自己的旅行呢？ 身为一个拖延患者，我通常会在到达目的地前的一个晚上，花上半小时，在网上搜索当地感兴趣的景点 (POI). 然后在Google Maps上为它们点上小星星，以免和它们在路上插肩而过。  但每次搜完资料">
+<meta name="keywords" content="PyCharm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用Jupyter notebook规划旅行路线">
+<meta property="og:title" content="用Juputer notebook规划旅行路线">
 <meta property="og:url" content="http://yoursite.com/2019/04/09/用Jupyter-notebook规划旅行路线/index.html">
 <meta property="og:site_name" content="M-Palace">
-<meta property="og:description" content="室友问我一道置换群题目，把我难住了。 想不出解法，遂写了个程序暴力求解。">
+<meta property="og:description" content="详见GitHub项目：https://github.com/luochang212/TSP-Travel-Route 对于在欧洲的小伙伴们，复活节假在这一周就正式开始啦。大家打算怎么计划自己的旅行呢？ 身为一个拖延患者，我通常会在到达目的地前的一个晚上，花上半小时，在网上搜索当地感兴趣的景点 (POI). 然后在Google Maps上为它们点上小星星，以免和它们在路上插肩而过。  但每次搜完资料">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="d:/software/luochang212/blog/source/_posts/img/20190316065412.jpg">
-<meta property="og:image" content="d:/software/luochang212/blog/source/_posts/img/20190316091702.png">
-<meta property="og:updated_time" content="2019-04-10T04:14:30.949Z">
+<meta property="og:image" content="http://yoursite.com/img/googlemap.JPG">
+<meta property="og:updated_time" content="2019-04-10T05:38:53.405Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用Jupyter notebook规划旅行路线">
-<meta name="twitter:description" content="室友问我一道置换群题目，把我难住了。 想不出解法，遂写了个程序暴力求解。">
-<meta name="twitter:image" content="d:/software/luochang212/blog/source/_posts/img/20190316065412.jpg">
+<meta name="twitter:title" content="用Juputer notebook规划旅行路线">
+<meta name="twitter:description" content="详见GitHub项目：https://github.com/luochang212/TSP-Travel-Route 对于在欧洲的小伙伴们，复活节假在这一周就正式开始啦。大家打算怎么计划自己的旅行呢？ 身为一个拖延患者，我通常会在到达目的地前的一个晚上，花上半小时，在网上搜索当地感兴趣的景点 (POI). 然后在Google Maps上为它们点上小星星，以免和它们在路上插肩而过。  但每次搜完资料">
+<meta name="twitter:image" content="http://yoursite.com/img/googlemap.JPG">
     
 
     
@@ -227,7 +226,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-            用Jupyter notebook规划旅行路线
+            用Juputer notebook规划旅行路线
         </h1>
     
 
@@ -243,7 +242,17 @@ ga('send', 'pageview');
 
 
                         
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/computer-science/">computer science</a>
+    </div>
+
                         
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/PyCharm/">PyCharm</a>
+    </div>
+
                     </div>
                 
             </header>
@@ -252,31 +261,24 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p>室友问我一道置换群题目，把我难住了。</p>
-<p>想不出解法，遂写了个程序暴力求解。</p>
-<a id="more"></a>
-<p>题目如下</p>
-<p><img src="D:/software/luochang212/blog/source/_posts/img/20190316065412.jpg" alt="字小伤眼"></p>
-<p>A permutation is applied to the string SUPERBGOLDHAT. The same permutation is applied to the output from this operation. The second output is OGTHLEPDSUARB. What was the first output? (Note: as an example, the permutation(1 3 4) applied to WOLF gives FOWL. Write your answer in capital letters inside quotation marks, e.g. “BEARDPLUGHOST”.)</p>
-<blockquote>
-<p>它说的是，一个变换规则作用于字符串SUPERBGOLDHAT, 生成一个新字符串。再次将相同的变换规则作用于这个新字符串，得到一个经过两次变换的字符串OGTHLEPDSUARB. 求第一次变换后的字符串。</p>
-</blockquote>
-<p>首先简单说明一下什么是置换，学过近世代数的同学可以跳过这部分</p>
-<p>首先给定一个序列<br>$a ={1, 2, 3, 4, 5, 6} $<br>然后给定一个置换</p>
-<script type="math/tex; mode=display">\sigma =  \left\{\begin{matrix}1 & 2 & 3 & 4 & 5 & 6 \\ 3 & 5 & 2 & 6 & 4 & 1\end{matrix}\right\}</script><p>那么，置换 $\sigma$ 的作用就是，把序列 $a $ 中的1变成3，2变成5，3变成2，4变成6 $\ldots$<br>以此类推<br>第一次: 3 5 2 6 4 1<br>第二次: 2 4 5 1 6 3<br>第三次: 5 6 4 3 1 2<br>上面表示置换的方法叫<strong>两行式</strong>，此外，我们还可以用<strong>轮换</strong>来表示一个置换<br>举个例子，如下是一个两行式表示的置换</p>
-<script type="math/tex; mode=display">\tau =  \left\{\begin{matrix}1 & 3 & 4 \\ 3 & 4 & 1 \end{matrix}\right\}</script><p>它表示成是轮换是 $\tau = (1 3 4) $<br>以上的 $\tau $ 和 $\sigma $ 都属于 k-循环置换<br>如果一个变换将 i<sub>1</sub> $\rightarrow$ i<sub>2</sub>, i<sub>2</sub> $\rightarrow$ i<sub>3</sub>, $\ldots $ i<sub>k</sub> $\rightarrow $ i<sub>1</sub>, 而其他各元不变，那么该置换称为<strong>k-循环置换</strong>(k-cycle)，写作 ( i<sub>1</sub>,i<sub>2</sub>,i<sub>3</sub> $\ldots $ i<sub>k</sub> ).<br>除了k-循环置换之外，还有一种置换叫做非循环置换<br>一个k-循环置换, 总是可以表示为一个轮换<br>一个<strong>非循环置换</strong>，则总是可以表示成几个轮换的积<br>例如，非循环置换 $ \upsilon $ 就可以表示成</p>
-<script type="math/tex; mode=display">\upsilon =  \left\{\begin{matrix}1 & 2 & 3 & 4 & 5 & 6 \\ 6 & 4 & 2 & 3 & 5 & 1\end{matrix}\right\} = (1 6)(2 4 3)(5) = (1 6)(2 4 3)</script><p>(以上参考自: <a href="https://blog.csdn.net/y990041769/article/details/45172095" target="_blank" rel="noopener">置换群题目汇总</a>,  <a href="http://idl.hbdlib.cn/book/00000000000000/pdfbook/o/o01/index0069.pdf" target="_blank" rel="noopener">《近世代数》杨子胥</a> ) </p>
-<p>放上代码</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># a is something like index</span></span><br><span class="line"><span class="comment"># b is the second output you want</span></span><br><span class="line"><span class="comment"># C (capital) is the first output we guess</span></span><br><span class="line">a = np.array([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>])</span><br><span class="line">a = a<span class="number">-1</span></span><br><span class="line">b = np.array([<span class="number">8</span>, <span class="number">7</span>, <span class="number">13</span>, <span class="number">11</span>, <span class="number">9</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">10</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">12</span>, <span class="number">5</span>, <span class="number">6</span>])</span><br><span class="line">b = b<span class="number">-1</span></span><br><span class="line">c = np.zeros([a.size])</span><br><span class="line"></span><br><span class="line"><span class="comment"># traverse all permutations of a</span></span><br><span class="line"><span class="keyword">for</span> C <span class="keyword">in</span> itertools.permutations(a, a.size):</span><br><span class="line">    print(C)</span><br><span class="line">    <span class="keyword">for</span> num <span class="keyword">in</span> C:</span><br><span class="line">		<span class="comment"># c (lower case) is the second output in this iteration</span></span><br><span class="line">        c[num] = C[C[num]] </span><br><span class="line">    <span class="keyword">if</span> (b == c).all():</span><br><span class="line">        C = [x+<span class="number">1</span> <span class="keyword">for</span> x <span class="keyword">in</span> C]</span><br><span class="line">        print(<span class="string">'The answer is '</span>, C)</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
-<p>最精髓的部分是那句 $c[num] = C[C[num]], $ 之前为了实现相同的功能写了十几行代码，还是我看了CSDN那篇博文以后，才发现了这个规律。如果问题改成根据third output, 去猜first output也很简单。就是把$C[C[num]]$ 加多一层就可以了， $c[num] = C[C[C[num]]]. $ 如果题目是不同的数字，就把b和a的长度改一下，so easy.</p>
-<p>这个程序大概跑了一天，最后跑出来了(巨汗)，给大家展示一下</p>
-<p><img src="D:/software/luochang212/blog/source/_posts/img/20190316091702.png" alt="运行结果"> </p>
-<p>输出为 $[6, 12, 9,10, 3, 8, 5, 4, 13, 11, 2, 7, 1]. $ </p>
-<p>它的含义是, 序列a $[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] $ 表示原始输入 SUPERBGOLDHAT 的对应的index，即1代表S，2代表U，以此类推。而输出序列$[6, 12, 9,10, 3, 8, 5, 4, 13, 11, 2, 7, 1], $ 代表first output的序列。</p>
-<p>到这里就解出来了，按index逐字翻译，答案是 BALDPORETHUGS. </p>
-<p>Over！</p>
-<p>但计算机真的算得太慢了，补上我新学的人脑解法 ^ _ ^</p>
-<p><img src alt="不知道为什么PO上来就歪了"></p>
+            <p>详见GitHub项目：<a href="https://github.com/luochang212/TSP-Travel-Route" target="_blank" rel="noopener">https://github.com/luochang212/TSP-Travel-Route</a></p>
+<p>对于在欧洲的小伙伴们，复活节假在这一周就正式开始啦。大家打算怎么计划自己的旅行呢？</p>
+<p>身为一个拖延患者，我通常会在到达目的地前的一个晚上，花上半小时，在网上搜索当地感兴趣的景点 (POI). 然后在Google Maps上为它们点上小星星，以免和它们在路上插肩而过。</p>
+<!-- Salvation lies within -->
+<p>但每次搜完资料，我的谷歌地图上都攒满了密密麻麻的小星星。此时此刻，望着这些密集的星星，我的偷懒本能终于发动了！我不禁发出灵魂之问：如何才能走最少的路，就周游所有景点呢? </p>
+<p>这就涉及到一个早就被数学系小伙伴们玩腻的问题啦！辣就是旅行商问题，又名TSP问题。旅行商问题的描述是这样的：一个商人在各个城市之间旅行，要求遍历所有城市并返回到出发点，那么如何规划路线，才能使总路径最短。这里就不过多解释了，更多信息见<a href="https://zh.wikipedia.org/wiki/%E6%97%85%E8%A1%8C%E6%8E%A8%E9%94%80%E5%91%98%E9%97%AE%E9%A2%98" target="_blank" rel="noopener">维基百科</a></p>
+<p><img src="/img/googlemap.JPG" alt="即使是大名鼎鼎的谷歌地图，多地规划功能也之是按输入顺序，把相邻两个地点的最短路径连起来而已"></p>
+<p>本项目用googlemaps包获取纬度和经度信息，用OR-Tools包求解TSP问题，最后用gmaps可视化结果。总结：Google Maps的API真的太好用了吧，根本就不需要自己写多少东西orz</p>
+<p>项目地址在本页上方，现在就打开链接体验一下定制路线的酣畅淋漓吧 XD</p>
+<p>当然在体验之前，你需要有以下配置：</p>
+<ol>
+<li>你需要一个Jupyter notebook, 当然很多人会直接安装Anaconda3.</li>
+<li>你还需要安装这些包：googleplaces, googlemaps, gmaps, ortools.</li>
+<li>你需要一个Google Maps API，注册链接:  <a href="https://developers.google.com/maps/documentation/distance-matrix/start#get-a-key" target="_blank" rel="noopener">https://developers.google.com/maps/documentation/distance-matrix/start#get-a-key</a></li>
+<li>在Jupyter notebook打开本仓库唯一一个<del>有排面的</del>ipynb文件，将第一个代码块的所有变量，改成自己的。自己的目的地，目的地所属区域，自己的密码什么的……</li>
+<li>从头到尾运行所有代码块，你就得到你的旅行地图辣</li>
+</ol>
+<p> <center> 欢迎Star, Pull, Pr.&lt;/center &gt;</center></p>
 
         
         </div>
@@ -287,7 +289,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://yoursite.com/2019/04/09/用Jupyter-notebook规划旅行路线/" data-id="cjuap9nk00001fgvj6mutdhj9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2019/04/09/用Jupyter-notebook规划旅行路线/" data-id="cjuasb0k40002vsvjdotjijzz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -403,15 +405,15 @@ ga('send', 'pageview');
                             <a href="/2019/04/09/用Jupyter-notebook规划旅行路线/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(/img/googlemap.JPG)" alt="用Juputer notebook规划旅行路线" class="thumbnail-image"></span>
     
 </a>
 
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2019/04/09/用Jupyter-notebook规划旅行路线/" class="title">用Jupyter notebook规划旅行路线</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/computer-science/">computer science</a></p>
+                            <p class="item-title"><a href="/2019/04/09/用Jupyter-notebook规划旅行路线/" class="title">用Juputer notebook规划旅行路线</a></p>
                             <p class="item-date"><time datetime="2019-04-09T21:13:00.000Z" itemprop="datePublished">2019-04-10</time></p>
                         </div>
                     </li>
@@ -501,7 +503,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/computer-science/">computer science</a><span class="category-list-count">4</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/computer-science/">computer science</a><span class="category-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -519,7 +521,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MATLAB/">MATLAB</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Pycharm/">Pycharm</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MATLAB/">MATLAB</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PyCharm/">PyCharm</a><span class="tag-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -528,7 +530,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/MATLAB/" style="font-size: 20px;">MATLAB</a> <a href="/tags/Pycharm/" style="font-size: 10px;">Pycharm</a>
+            <a href="/tags/MATLAB/" style="font-size: 20px;">MATLAB</a> <a href="/tags/PyCharm/" style="font-size: 10px;">PyCharm</a>
         </div>
     </div>
 
