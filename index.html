@@ -169,7 +169,7 @@ ga('send', 'pageview');
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                6
+                7
                 <span>文章</span>
             </div>
             <div class="article-info-block">
@@ -216,6 +216,140 @@ ga('send', 'pageview');
 
             
             <section id="main">
+    <article id="post-我的微博数据可视化" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2019/04/20/我的微博数据可视化/">我的微博数据可视化</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2019/04/20/我的微博数据可视化/">
+            <time datetime="2019-04-20T15:40:25.000Z" itemprop="datePublished">2019-04-20</time>
+        </a>
+    </div>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/computer-science/">computer science</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Jupyter-notebook/">Jupyter notebook</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p></p><p>【GitHub项目地址】：<a href="https://github.com/luochang212/weibo_analysis" target="_blank" rel="noopener">https://github.com/luochang212/weibo_analysis</a></p>
+<p>这次的数据用的是本科期间就已经爬好，丢在硬盘里的数据。但因为raw data里夹杂着大量和博文无关的字符，当时又没有足够的编程技巧处理数据，所以一丢就是两年。现在，本python初丁趁着还有机会摸鱼，赶紧把数据翻出来，让它们发光发热。</p><p></p>
+            <p class="article-more-link">
+                <a href="/2019/04/20/我的微博数据可视化/#more">查看更多</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2019/04/20/我的微博数据可视化/" data-id="cjuq5sc3c0000n4vjyrevww30" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2019/04/20/我的微博数据可视化/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2019/04/20/我的微博数据可视化/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-用Jupyter-notebook规划旅行路线" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -258,7 +392,7 @@ ga('send', 'pageview');
         
         <div class="article-entry" itemprop="articleBody">
         
-            <p></p><p>【GitHub项目地址】：<a href="https://github.com/luochang212/TSP-Travel-Route" target="_blank" rel="noopener">https://github.com/luochang212/TSP-Travel-Route</a></p>
+            <p></p><p>【GitHub项目地址】：<a href="https://github.com/luochang212/tsp_route" target="_blank" rel="noopener">https://github.com/luochang212/tsp_route</a></p>
 <p>对于在欧洲的小伙伴们，复活节假在这一周就正式开始啦。大家打算怎么计划自己的旅行呢？</p>
 <p>身为一个拖延患者，我通常会拖到出发前的最后一个晚上，花上半小时，在网上搜索当地感兴趣的景点 (POI), 然后在Google Maps上为它们点上小星星，以免和它们插肩而过。</p><p></p>
             <p class="article-more-link">
@@ -273,7 +407,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://yoursite.com/2019/04/09/用Jupyter-notebook规划旅行路线/" data-id="cjuaw0q3g00045ovj5esky8ab" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2019/04/09/用Jupyter-notebook规划旅行路线/" data-id="cjuq5sc3u0005n4vjgcj9wb4t" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -377,7 +511,7 @@ ga('send', 'pageview');
                         
     <div class="article-category">
     	<i class="fa fa-folder"></i>
-        <a class="article-category-link" href="/categories/computer-science/">computer science</a>
+        <a class="article-category-link" href="/categories/maths/">maths</a>
     </div>
 
                         
@@ -407,7 +541,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://yoursite.com/2019/03/15/用Python解置换群小题目/" data-id="cjuaw0q3m00075ovjfkuignz4" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2019/03/15/用Python解置换群小题目/" data-id="cjuq5sc3x000an4vjh9ucs2te" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -540,7 +674,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/05/14/马科维茨均值方差模型的MATLAB实现/" data-id="cjuaw0q5q000l5ovjsb1431jz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/05/14/马科维茨均值方差模型的MATLAB实现/" data-id="cjuq5scg1000pn4vjcycczz3b" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -673,7 +807,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/05/14/灰色预测的MATLAB实现/" data-id="cjuaw0q3e00025ovjdkcip1ng" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/05/14/灰色预测的MATLAB实现/" data-id="cjuq5sc3v0006n4vj1sw9gvar" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -806,7 +940,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/05/14/连续域蚁群算法MATLAB实现/" data-id="cjuaw0q3n00085ovju8p2nsj5" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/05/14/连续域蚁群算法MATLAB实现/" data-id="cjuq5sc3w0008n4vj6u5dqjyd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -929,7 +1063,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://yoursite.com/2018/05/14/一个自我介绍/" data-id="cjuaw0q3700005ovjsxn45vwn" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/05/14/一个自我介绍/" data-id="cjuq5sc4g000mn4vjoxjx4jxe" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1020,6 +1154,25 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2019/04/20/我的微博数据可视化/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://pityboy.oss-cn-beijing.aliyuncs.com/untitled211.jpg)" alt="我的微博数据可视化" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/computer-science/">computer science</a></p>
+                            <p class="item-title"><a href="/2019/04/20/我的微博数据可视化/" class="title">我的微博数据可视化</a></p>
+                            <p class="item-date"><time datetime="2019-04-20T15:40:25.000Z" itemprop="datePublished">2019-04-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2019/04/09/用Jupyter-notebook规划旅行路线/" class="thumbnail">
     
     
@@ -1049,7 +1202,7 @@ ga('send', 'pageview');
                         </div>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/computer-science/">computer science</a></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/maths/">maths</a></p>
                             <p class="item-title"><a href="/2019/03/15/用Python解置换群小题目/" class="title">用Python解置换群问题</a></p>
                             <p class="item-date"><time datetime="2019-03-15T22:45:10.000Z" itemprop="datePublished">2019-03-16</time></p>
                         </div>
@@ -1093,25 +1246,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/05/14/连续域蚁群算法MATLAB实现/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://pityboy.oss-cn-beijing.aliyuncs.com/untitled132.jpg)" alt="连续域蚁群算法MATLAB实现" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/computer-science/">computer science</a></p>
-                            <p class="item-title"><a href="/2018/05/14/连续域蚁群算法MATLAB实现/" class="title">连续域蚁群算法MATLAB实现</a></p>
-                            <p class="item-date"><time datetime="2018-05-14T18:04:15.000Z" itemprop="datePublished">2018-05-15</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1121,7 +1255,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/computer-science/">computer science</a><span class="category-list-count">5</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/computer-science/">computer science</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/maths/">maths</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -1130,7 +1264,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">4</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">四月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">三月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">4</span></li></ul>
         </div>
     </div>
 
@@ -1139,7 +1273,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jupyter-notebook/">Jupyter notebook</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MATLAB/">MATLAB</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PyCharm/">PyCharm</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jupyter-notebook/">Jupyter notebook</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MATLAB/">MATLAB</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PyCharm/">PyCharm</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -1148,7 +1282,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Jupyter-notebook/" style="font-size: 10px;">Jupyter notebook</a> <a href="/tags/MATLAB/" style="font-size: 20px;">MATLAB</a> <a href="/tags/PyCharm/" style="font-size: 10px;">PyCharm</a>
+            <a href="/tags/Jupyter-notebook/" style="font-size: 15px;">Jupyter notebook</a> <a href="/tags/MATLAB/" style="font-size: 20px;">MATLAB</a> <a href="/tags/PyCharm/" style="font-size: 10px;">PyCharm</a>
         </div>
     </div>
 

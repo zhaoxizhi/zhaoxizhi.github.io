@@ -3,20 +3,22 @@
 <head><meta name="generator" content="Hexo 3.8.0">
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     
-    <title>Categories | M-Palace</title>
+    <title>我的微博数据可视化 | M-Palace</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="Student of BUPT">
-<meta name="keywords" content="computer science">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Categories">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+    <meta name="description" content="【GitHub项目地址】：https://github.com/luochang212/weibo_analysis 这次的数据用的是本科期间就已经爬好，丢在硬盘里的数据。但因为raw data里夹杂着大量和博文无关的字符，当时又没有足够的编程技巧处理数据，所以一丢就是两年。现在，本python初丁趁着还有机会摸鱼，赶紧把数据翻出来，让它们发光发热。">
+<meta name="keywords" content="Jupyter notebook">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的微博数据可视化">
+<meta property="og:url" content="http://yoursite.com/2019/04/20/我的微博数据可视化/index.html">
 <meta property="og:site_name" content="M-Palace">
-<meta property="og:description" content="Student of BUPT">
+<meta property="og:description" content="【GitHub项目地址】：https://github.com/luochang212/weibo_analysis 这次的数据用的是本科期间就已经爬好，丢在硬盘里的数据。但因为raw data里夹杂着大量和博文无关的字符，当时又没有足够的编程技巧处理数据，所以一丢就是两年。现在，本python初丁趁着还有机会摸鱼，赶紧把数据翻出来，让它们发光发热。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-14T16:26:31.114Z">
+<meta property="og:image" content="https://pityboy.oss-cn-beijing.aliyuncs.com/untitled211.jpg">
+<meta property="og:updated_time" content="2019-04-20T23:50:37.774Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Categories">
-<meta name="twitter:description" content="Student of BUPT">
+<meta name="twitter:title" content="我的微博数据可视化">
+<meta name="twitter:description" content="【GitHub项目地址】：https://github.com/luochang212/weibo_analysis 这次的数据用的是本科期间就已经爬好，丢在硬盘里的数据。但因为raw data里夹杂着大量和博文无关的字符，当时又没有足够的编程技巧处理数据，所以一丢就是两年。现在，本python初丁趁着还有机会摸鱼，赶紧把数据翻出来，让它们发光发热。">
+<meta name="twitter:image" content="https://pityboy.oss-cn-beijing.aliyuncs.com/untitled211.jpg">
     
 
     
@@ -216,16 +218,187 @@ ga('send', 'pageview');
 </aside>
 
             
-            <section id="main"><section class="layout-wrap">
-    <div class="layout-title">
-        <span>Categories</span>
-    </div>
-    <div class="layout-wrap-inner list-categories">
+            <section id="main"><article id="post-我的微博数据可视化" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/computer-science/">computer science</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/maths/">maths</a><span class="category-list-count">1</span></li></ul>
         
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            我的微博数据可视化
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2019/04/20/我的微博数据可视化/">
+            <time datetime="2019-04-20T15:40:25.000Z" itemprop="datePublished">2019-04-20</time>
+        </a>
     </div>
-</section></section>
+
+
+                        
+    <div class="article-category">
+    	<i class="fa fa-folder"></i>
+        <a class="article-category-link" href="/categories/computer-science/">computer science</a>
+    </div>
+
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Jupyter-notebook/">Jupyter notebook</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>【GitHub项目地址】：<a href="https://github.com/luochang212/weibo_analysis" target="_blank" rel="noopener">https://github.com/luochang212/weibo_analysis</a></p>
+<p>这次的数据用的是本科期间就已经爬好，丢在硬盘里的数据。但因为raw data里夹杂着大量和博文无关的字符，当时又没有足够的编程技巧处理数据，所以一丢就是两年。现在，本python初丁趁着还有机会摸鱼，赶紧把数据翻出来，让它们发光发热。</p>
+<a id="more"></a>
+<h3 id="文本获取"><a href="#文本获取" class="headerlink" title="文本获取"></a>文本获取</h3><p>现如今微博的数据越来越不好爬，因为新浪微博严防死打，github上的爬虫生存周期都很短，爬取数据的成本大大增加。但是万变不离其宗，最笨的方式常常是最有效的。我用鼠标精灵写了个插件，控制快捷键和页面拖动，把内容从浏览器上粘贴到sublime里。然后将爬取的数据放在目标路径下，按1到58按顺序命名，方便日后用for loop读取。</p>
+<h3 id="生成csv文件"><a href="#生成csv文件" class="headerlink" title="生成csv文件"></a>生成csv文件</h3><p>有了数据，接下来我们要把数据归一化，整理成电脑方便处理的数据。这力我选择把数据写成csv格式。</p>
+<p>第一步，先将原始文件按照所属的字段进行分割。根据原始数据，我划分了五个字段，分别是: id, date, time, device, content. 分别记录本条微博的文件位置，发布日期，发布时间，发送设备和文本内容。</p>
+<p>在设计好数据的结构之后，利用python对字符串的强大支持，我们可以快速的分割文本。首先用split粗略划分，再用find函数进一步定位到索引，细分文本。接着用各变量分别接收内容，再依次存入csv中。</p>
+<h3 id="可视化微博数据"><a href="#可视化微博数据" class="headerlink" title="可视化微博数据"></a>可视化微博数据</h3><p>有了csv文件，下一步就是用jupyter notebook读取数据，并且制作可视化的各种图标及小工具(widget). 这里我要特别推荐数据分析包pandas以及可视化包seaborn, 他们分别有强大的功能和快速定制的可视化体验。可谓处理数据的不二之选。</p>
+<p>好了，废话少说我们进入分析流程。</p>
+<p>首先是需求分析，我的目标如下:</p>
+<ul>
+<li><p>绘制日期分布热力图，观察今年使用微博频率的趋势</p>
+</li>
+<li><p>绘制设备使用直方图，看看平时最常用什么平台发博</p>
+</li>
+<li><p>绘制时间分布直方图，观察一天之中各时段的发博频率</p>
+</li>
+<li><p>调用窗口工具，拖动查看各个时间段都发了什么内容</p>
+</li>
+</ul>
+<p>以上代码详见github repository, 就不赘述了。</p>
+<p>分析结果如下:</p>
+<p><img src="/img/heat_map.png" alt="Heat map"></p>
+<p>热力图总的来说颜色逐年加深，说明我正在逐渐成为一个微博控。而且注意到往年年初我是不怎么玩微博的，但随着年纪渐长，1-3月份我玩微博的频率越来越高，这可能意味着过年越来越无聊，没有年味，从而加长了我混迹微博的时间。</p>
+<p><img src="/img/device_distribution.png" alt="Device distribution"></p>
+<p>是你吗？华为的舔狗</p>
+<p><img src="/img/time_distribution.png" alt="Sending time distribution"></p>
+<p>晚上两点也不睡的坏小孩，早上10点起的偷懒者。（此处是一个卑微的笑容）</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2019/04/20/我的微博数据可视化/" data-id="cjuq5sc3c0000n4vjyrevww30" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2019/04/20/我的微博数据可视化/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2019/04/20/我的微博数据可视化/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/04/09/用Jupyter-notebook规划旅行路线/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">用Jupyter notebook规划旅行路线</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+</section>
+    
+
+</section>
             
                 
 <aside id="sidebar">
@@ -406,9 +579,9 @@ ga('send', 'pageview');
     <script>
     var disqus_config = function () {
         
-            this.page.url = 'http://yoursite.com/categories/index.html';
+            this.page.url = 'http://yoursite.com/2019/04/20/我的微博数据可视化/';
         
-        this.page.identifier = '';
+        this.page.identifier = '我的微博数据可视化';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
@@ -442,6 +615,23 @@ ga('send', 'pageview');
 <!-- Custom Scripts -->
 <script src="/js/main.js"></script>
 
-    </div><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 </body>
 </html>
